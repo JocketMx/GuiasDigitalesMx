@@ -1,0 +1,57 @@
+// components/navbar.tsx
+import React from 'react';
+import { Button } from 'antd';
+import { SheetContent } from 'react-spring-bottom-sheet';
+
+const Navbar = () => {
+  return (
+    <div>
+      {/* Desktop button */}
+      <Button className="bg-[#0F7A7E] text-white hover:bg-[#17A2A6]">Ir a la Plataforma</Button>
+
+      {/* Mobile menu button */}
+      <SheetContent>
+        <Button className="w-full bg-[#0F7A7E] text-white hover:bg-[#17A2A6]">Ir a la Plataforma</Button>
+      </SheetContent>
+    </div>
+  );
+};
+
+export default Navbar;
+
+// components/hero.tsx
+import React from 'react';
+import { Button } from 'antd';
+import ArrowRight from './ArrowRight';
+
+const Hero = () => {
+  return (
+    <div>
+      {/* Main button */}
+      <Button size="lg" className="bg-[#0F7A7E] hover:bg-[#17A2A6] text-white">
+        Ir a la Plataforma <ArrowRight className="ml-2 h-4 w-4" />
+      </Button>
+    </div>
+  );
+};
+
+export default Hero;
+
+// app/page.tsx
+import React from 'react';
+import { Button } from 'antd';
+
+const HomePage = () => {
+  return (
+    <div>
+      {/* Contact section */}
+      <section id="contacto">
+        <Button size="lg" className="bg-[#0F7A7E] hover:bg-[#17A2A6] text-white">
+          Ir a la Plataforma
+        </Button>
+      </section>
+    </div>
+  );
+};
+
+export default HomePage;

@@ -1,0 +1,33 @@
+// components/hero.tsx
+import Image from 'next/image';
+
+const Hero = () => {
+return (
+  <div className="hero">
+    <Image
+      src="/images/logo_guias_transparente.png"
+      alt="Guías Digitales MX"
+      width={160}
+      height={120}
+      className="h-12 w-auto"
+    />
+    {/* rest of code here */}
+  </div>
+);
+};
+
+export default Hero;
+
+// components/footer.tsx
+import Image from 'next/image';
+
+const Footer = () => {
+return (
+  <footer className="footer">
+    <Image src="/images/logo_guias_transparente.png" alt="Guías Digitales MX" width={120} height={40} className="h-7 w-auto" />
+    {/* rest of code here */}
+  </footer>
+);
+};
+
+export default Footer;
