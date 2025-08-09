@@ -1,0 +1,28 @@
+name: Manual Vercel Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      note:
+        description: "Nota opcional para el despliegue"
+        required: false
+        default: "Manual trigger"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+          NOTE: ${{ github.event.inputs.note }}
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK" ]; then
+            echo "❌ Missing VERCEL_DEPLOY_HOOK secret"
+            exit 1
+          fi
+          echo "🚀 Disparando deploy en Vercel..."
+          curl -s -X POST "$VERCEL_DEPLOY_HOOK" \
+            -H "Content-Type: application/json" \
+            -d "{\"trigger\":\"manual-gh-actions\",\"note\":\"$NOTE\",\"sha\":\"${GITHUB_SHA}\"}" \
+          && echo "✅ Deploy disparado" || (echo "❌ Error al disparar deploy" && exit 1)
