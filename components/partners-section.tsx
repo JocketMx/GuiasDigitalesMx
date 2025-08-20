@@ -44,9 +44,7 @@ export default function PartnersSection() {
             <Handshake className="h-4 w-4" />
             Alianzas estratégicas
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl bg-gradient-to-r from-[#0F7A7E] to-[#59C5B3] bg-clip-text text-transparent">
-            Nuestros Partners
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight text-[#0F7A7E] sm:text-4xl">Nuestros Partners</h2>
           <p className="mt-3 text-brand-ink/70">Trabajamos con las principales paqueterías para mover tu negocio.</p>
         </div>
 

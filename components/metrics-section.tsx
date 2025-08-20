@@ -72,7 +72,7 @@ export default function MetricsSection() {
             <TrendingUp className="h-4 w-4" />
             Resultados medibles
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl bg-gradient-to-r from-[#0F7A7E] to-[#59C5B3] bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold tracking-tight text-[#0F7A7E] sm:text-4xl">
             Números que hablan por sí solos
           </h2>
           <p className="mt-3 text-brand-ink/70">

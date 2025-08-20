@@ -41,7 +41,7 @@ export default function Benefits() {
     <section id="beneficios" className="relative w-full py-16 md:py-20 overflow-hidden bg-white">
       {/* Marco decorativo animado */}
       <div className="absolute inset-4 -z-10 rounded-3xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#0F7A7E]/5 via-transparent to-[#59C5B3]/5 overflow-hidden">
-        <div className="absolute inset-4 rounded-2xl border border-[#59C5B3]/30 animate-pulse" />
+        <div className="absolute inset-4 rounded-2xl border border-[#59C5B3]/30 animate-gentle-glow" />
 
         {/* Elementos decorativos contenidos dentro del marco - solo verde */}
         <div
@@ -52,11 +52,11 @@ export default function Benefits() {
           className="pointer-events-none absolute bottom-4 right-4 h-32 w-32 rounded-full bg-[#59C5B3]/30 blur-3xl animate-bounce"
           style={{ animationDuration: "4s", animationDelay: "1s" }}
         />
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0F7A7E]/20 blur-2xl animate-pulse" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0F7A7E]/20 blur-2xl animate-gentle-glow" />
 
         {/* Más elementos decorativos - solo verde */}
         <div
-          className="pointer-events-none absolute top-1/4 right-1/3 h-16 w-16 rounded-full bg-[#59C5B3]/15 blur-xl animate-pulse"
+          className="pointer-events-none absolute top-1/4 right-1/3 h-16 w-16 rounded-full bg-[#59C5B3]/15 blur-xl animate-gentle-glow"
           style={{ animationDelay: "2s" }}
         />
         <div
@@ -67,11 +67,11 @@ export default function Benefits() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#0F7A7E]/30 bg-[#0F7A7E]/10 px-4 py-2 text-sm font-medium text-[#0F7A7E] mb-4 animate-pulse">
+          <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#0F7A7E]/30 bg-[#0F7A7E]/10 px-4 py-2 text-sm font-medium text-[#0F7A7E] mb-4 animate-slide-in-badge">
             <Zap className="h-4 w-4" />
             Plataforma 24/7
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl bg-gradient-to-r from-[#0F7A7E] to-[#59C5B3] bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold tracking-tight text-[#0F7A7E] sm:text-4xl">
             Beneficios de nuestra plataforma 24/7
           </h2>
           <p className="mt-3 text-brand-ink/70">La experiencia de 12 años de GDMX Logistics, ahora digital.</p>
@@ -116,6 +116,34 @@ export default function Benefits() {
         .animate-fade-in-up {
           animation: fade-in-up 0.6s ease-out forwards;
           opacity: 0;
+        }
+
+        @keyframes gentle-glow {
+          0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.6;
+            transform: scale(1.05);
+          }
+        }
+        .animate-gentle-glow {
+          animation: gentle-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes slide-in-badge {
+          0% {
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        .animate-slide-in-badge {
+          animation: slide-in-badge 0.8s ease-out forwards;
         }
       `}</style>
     </section>

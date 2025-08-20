@@ -13,6 +13,8 @@ import ClientsSection from "@/components/clients-section"
 import Footer from "@/components/footer"
 import PartnersSection from "@/components/partners-section"
 import MetricsSection from "@/components/metrics-section"
+import PamexPartnership from "@/components/pamex-partnership"
+import EntreperfumesPartnership from "@/components/entreperfumes-partnership"
 
 export default function Page() {
   return (
@@ -22,10 +24,12 @@ export default function Page() {
         <Hero />
         <Benefits />
         <Showcase />
-        <Testimonials />
+        <PamexPartnership />
+        <EntreperfumesPartnership />
         <MetricsSection />
         <ClientsSection />
         <PartnersSection />
+        <Testimonials />
 
         {/* Sección de contacto estilizada - solo verde */}
         <section id="contacto" className="relative w-full py-16 md:py-20 overflow-hidden bg-white">
@@ -69,7 +73,7 @@ export default function Page() {
                 >
                   <Rocket className="h-6 w-6" />
                 </div>
-                <h3 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl bg-gradient-to-r from-[#0F7A7E] to-[#59C5B3] bg-clip-text text-transparent">
+                <h3 className="text-3xl font-bold tracking-tight text-[#0F7A7E] md:text-4xl">
                   Tu encárgate de vender, nosotros solucionamos tu logística.
                 </h3>
               </div>
