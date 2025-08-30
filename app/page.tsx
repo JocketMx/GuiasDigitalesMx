@@ -15,6 +15,7 @@ import PartnersSection from "@/components/partners-section"
 import MetricsSection from "@/components/metrics-section"
 import PamexPartnership from "@/components/pamex-partnership"
 import EntreperfumesPartnership from "@/components/entreperfumes-partnership"
+import BlogSection from "@/components/blog-section"
 
 export default function Page() {
   return (
@@ -29,6 +30,7 @@ export default function Page() {
         <MetricsSection />
         <ClientsSection />
         <PartnersSection />
+        <BlogSection />
         <Testimonials />
 
         {/* Sección de contacto estilizada - solo verde */}
@@ -87,7 +89,7 @@ export default function Page() {
                 className="flex flex-col gap-3 sm:flex-row sm:flex-wrap animate-fade-in-up"
                 style={{ animationDelay: "200ms" }}
               >
-                <Link href="https://gdmx.mx/dashboard" target="_blank">
+                <Link href="https://dashboard.guiasdigitales.mx" target="_blank">
                   <Button
                     size="lg"
                     className="bg-[#0F7A7E] hover:bg-[#17A2A6] text-white transition-all duration-300 hover:scale-105"

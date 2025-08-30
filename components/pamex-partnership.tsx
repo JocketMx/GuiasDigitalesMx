@@ -167,7 +167,7 @@ export default function PamexPartnership() {
 
               {/* Botones alineados y centrados */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-                <Link href="https://gdmx.mx/dashboard" target="_blank">
+                <Link href="https://dashboard.guiasdigitales.mx" target="_blank">
                   <Button
                     size="lg"
                     className="bg-[#F7A23B] text-[#0B0A16] hover:bg-[#E89529] transition-all duration-300 hover:scale-105 shadow-lg w-full sm:w-auto"

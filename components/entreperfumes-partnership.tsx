@@ -165,7 +165,7 @@ export default function EntreperfumesPartnership() {
 
               {/* Botones alineados y centrados */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-                <Link href="https://gdmx.mx/dashboard" target="_blank">
+                <Link href="https://dashboard.guiasdigitales.mx" target="_blank">
                   <Button
                     size="lg"
                     className="bg-[#59C5B3] text-white hover:bg-[#4FB3A2] transition-all duration-300 hover:scale-105 shadow-lg w-full sm:w-auto"

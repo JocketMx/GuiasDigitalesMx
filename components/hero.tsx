@@ -87,7 +87,7 @@ export default function Hero() {
           <div className="grid gap-4 sm:grid-cols-2">
             {/* Columna 1: Ir a la Plataforma + logo GDMX */}
             <div className="flex flex-col items-center gap-3 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-              <Link href="https://gdmx.mx/dashboard" target="_blank" className="w-full sm:w-auto">
+              <Link href="https://dashboard.guiasdigitales.mx" target="_blank" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="bg-[#0F7A7E] hover:bg-[#17A2A6] text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
