@@ -143,11 +143,11 @@ export default function Hero() {
               
               {/* Screenshot carousel */}
               <div className="relative rounded-2xl border-2 border-[#0F7A7E]/20 bg-white p-2 shadow-2xl overflow-hidden">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-white">
                   {screenshots.map((screenshot, index) => (
                     <div
                       key={index}
-                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                      className={`absolute inset-0 transition-all duration-700 ease-in-out flex items-center justify-center bg-white ${
                         index === currentSlide 
                           ? "opacity-100 translate-x-0" 
                           : index < currentSlide 
@@ -159,7 +159,7 @@ export default function Hero() {
                         src={screenshot.src}
                         alt={screenshot.alt}
                         fill
-                        className="object-cover object-top"
+                        className="object-contain object-center"
                         priority={index === 0}
                       />
                     </div>
