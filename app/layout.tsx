@@ -3,14 +3,14 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Guías Digitales MX - Logística Inteligente por GDMX",
+  title: "Guías Digitales MX - La Plataforma Completa de Envíos",
   description:
-    "Plataforma 24/7 para cotizar, comparar y crear guías de envío. Ahorra más del 50% en tus envíos con el respaldo de GDMX Logistics.",
-  keywords: "logística, envíos, paquetería, guías digitales, GDMX, México, e-commerce, shipping",
+    "Plataforma 24/7 para cotizar, comparar y crear guías de envío. Ahorra hasta 60% con crédito, notificaciones automáticas, facturación y API.",
+  keywords: "logística, envíos, paquetería, guías digitales, GDMX, México, e-commerce, shipping, API, facturación, crédito",
   authors: [{ name: "GDMX Logistics" }],
   openGraph: {
-    title: "Guías Digitales MX - Logística Inteligente por GDMX",
-    description: "Plataforma 24/7 para cotizar, comparar y crear guías de envío. Ahorra más del 50% en tus envíos.",
+    title: "Guías Digitales MX - La Plataforma Completa de Envíos",
+    description: "Ahorra hasta 60% en envíos. Crédito, notificaciones automáticas, facturación en línea y API para tu negocio.",
     siteName: "Guías Digitales MX",
     images: [{ url: "/opengraph-image.png" }],
     locale: "es_MX",
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guías Digitales MX - Logística Inteligente por GDMX",
-    description: "Plataforma 24/7 para cotizar, comparar y crear guías de envío. Ahorra más del 50% en tus envíos.",
+    title: "Guías Digitales MX - La Plataforma Completa de Envíos",
+    description: "Ahorra hasta 60% en envíos. Crédito, notificaciones automáticas, facturación en línea y API para tu negocio.",
     images: ["/opengraph-image.png"],
   },
   icons: {

@@ -3,189 +3,172 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, Plane, Package, Percent } from "lucide-react"
+import { ArrowRight, ShieldCheck, Zap, Package, Percent, CreditCard, Bell, FileText, Code, Clock } from "lucide-react"
 
 export default function Hero() {
+  const features = [
+    { icon: CreditCard, text: "Crédito para tu negocio" },
+    { icon: Bell, text: "Notificaciones automáticas" },
+    { icon: FileText, text: "Facturación en línea" },
+    { icon: Code, text: "API para tiendas online" },
+  ]
+
   return (
-    <section className="relative w-full py-14 md:py-20 overflow-hidden bg-white">
-      {/* Marco decorativo animado */}
-      <div className="absolute inset-4 -z-10 rounded-3xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#0F7A7E]/5 via-transparent to-[#59C5B3]/5 overflow-hidden">
-        <div className="absolute inset-4 rounded-2xl border border-[#59C5B3]/30 animate-gentle-glow" />
-
-        {/* Elementos decorativos contenidos - solo verde */}
-        <div
-          className="pointer-events-none absolute top-4 left-4 h-32 w-32 rounded-full bg-[#59C5B3]/25 blur-3xl animate-bounce"
-          style={{ animationDuration: "3s" }}
-        />
-        <div
-          className="pointer-events-none absolute bottom-4 right-4 h-32 w-32 rounded-full bg-[#59C5B3]/30 blur-3xl animate-bounce"
-          style={{ animationDuration: "4s", animationDelay: "1s" }}
-        />
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0F7A7E]/20 blur-2xl animate-gentle-glow" />
-
-        {/* Elementos decorativos adicionales - solo verde */}
-        <div
-          className="pointer-events-none absolute top-1/4 right-1/4 h-16 w-16 rounded-full bg-[#59C5B3]/20 blur-2xl animate-gentle-glow"
-          style={{ animationDelay: "2s" }}
-        />
-        <div
-          className="pointer-events-none absolute bottom-1/4 left-1/4 h-20 w-20 rounded-full bg-[#59C5B3]/20 blur-2xl animate-bounce"
-          style={{ animationDuration: "5s", animationDelay: "3s" }}
-        />
+    <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0B0A16] via-[#0F7A7E]/20 to-[#0B0A16] pt-20">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0F7A7E]/20 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#59C5B3]/15 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#0F7A7E]/10 to-[#59C5B3]/10 rounded-full blur-3xl" />
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%230F7A7E%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-30" />
       </div>
 
-      {/* Badge de empresa mexicana - optimizado para móvil */}
-      <div
-        className="absolute top-4 right-4 z-30 animate-fade-in-up max-w-[calc(100vw-2rem)] md:max-w-none"
-        style={{ animationDelay: "1s" }}
-      >
-        <div className="inline-flex items-center gap-1.5 md:gap-2 rounded-full border-2 border-[#0F7A7E]/40 bg-white/95 backdrop-blur-sm px-2 md:px-3 py-1 md:py-1.5 text-[10px] md:text-xs text-[#0F7A7E] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          <span className="text-xs md:text-sm flex-shrink-0">🇲🇽</span>
-          <span className="font-semibold leading-tight">
-            <span className="hidden sm:inline">Empresa 100% Mexicana, orgullosamente Tapatía</span>
-            <span className="sm:hidden">100% Mexicana</span>
-          </span>
+      {/* Badge de empresa mexicana */}
+      <div className="absolute top-24 right-4 z-30 animate-fade-in hidden md:block" style={{ animationDelay: "1s" }}>
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#59C5B3]/30 bg-white/5 backdrop-blur-xl px-4 py-2 text-sm text-white/90">
+          <span className="text-lg">🇲🇽</span>
+          <span className="font-medium">Empresa 100% Mexicana, orgullosamente Tapatía</span>
         </div>
       </div>
 
-      <div className="container mx-auto grid gap-8 md:gap-10 px-4 md:grid-cols-2 md:items-center relative z-10">
-        <div className="space-y-4 md:space-y-6 animate-fade-in-up pt-12 md:pt-0">
-          {/* Badges reorganizados para móvil */}
-          <div className="flex flex-col gap-2 md:gap-3">
-            <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#59C5B3]/50 bg-white px-3 py-1 text-xs text-[#0F7A7E] shadow-sm animate-slide-in-badge w-fit">
-              <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0" />
-              <span className="whitespace-nowrap">12 años impulsando logística en México</span>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          {/* Left column - Content */}
+          <div className="space-y-8 text-center lg:text-left">
+            {/* Stats badges */}
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start animate-slide-up">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#59C5B3]/40 bg-[#59C5B3]/10 px-4 py-2 text-sm text-[#59C5B3]">
+                <ShieldCheck className="h-4 w-4" />
+                <span>12 años de experiencia</span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#F7A23B]/40 bg-[#F7A23B]/10 px-4 py-2 text-sm text-[#F7A23B] font-semibold">
+                <Percent className="h-4 w-4" />
+                <span>Ahorra hasta 60%</span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#59C5B3]/40 bg-[#59C5B3]/10 px-4 py-2 text-sm text-[#59C5B3]">
+                <Clock className="h-4 w-4" />
+                <span>Guía en 1 minuto</span>
+              </div>
             </div>
 
-            <div
-              className="inline-flex items-center gap-2 rounded-full border-2 border-[#0F7A7E]/50 bg-[#0F7A7E]/10 px-3 py-1 text-xs text-[#0F7A7E] font-semibold shadow-sm animate-slide-in-badge w-fit"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <Percent className="h-3.5 w-3.5 flex-shrink-0" />
-              <span className="whitespace-nowrap">Ahorra más del 50% en tus envíos</span>
+            {/* Main heading */}
+            <div className="space-y-4 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+                La plataforma
+                <span className="block gradient-text">completa de envíos</span>
+                para tu negocio
+              </h1>
+              <p className="text-lg md:text-xl text-white/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Cotiza, compara y genera guías 24/7. Con crédito, notificaciones automáticas, 
+                facturación en línea y API para conectar tus tiendas.
+              </p>
             </div>
-          </div>
 
-          <div className="flex items-start gap-3 mb-4">
-            <div
-              className="inline-flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0F7A7E] to-[#59C5B3] text-white shadow-lg animate-bounce flex-shrink-0 mt-1"
-              style={{ animationDuration: "2s" }}
-            >
-              <Plane className="h-5 w-5 md:h-6 md:w-6" />
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0F7A7E] leading-tight">
-              Envíos inteligentes para negocios reales
-            </h1>
-          </div>
-
-          <p className="text-base md:text-lg text-brand-ink/80 leading-relaxed">
-            Convierte tu logística en una ventaja competitiva: cotiza, compara y crea guías 24/7 con el respaldo humano
-            de GDMX Logistics. <span className="font-semibold text-[#0F7A7E]">Imprime tu guía y ya.</span>
-          </p>
-
-          {/* Botones y logos optimizados para móvil */}
-          <div className="grid gap-4 sm:grid-cols-2">
-            {/* Columna 1: Ir a la Plataforma + logo GDMX */}
-            <div className="flex flex-col items-center gap-3 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-              <Link href="https://dashboard.guiasdigitales.mx" target="_blank" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="bg-[#0F7A7E] hover:bg-[#17A2A6] text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+            {/* Feature pills */}
+            <div className="grid grid-cols-2 gap-3 max-w-lg mx-auto lg:mx-0 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+              {features.map((feature, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-3 text-sm text-white/80 hover:bg-white/10 hover:border-[#59C5B3]/30 transition-all duration-300"
                 >
-                  Ir a la Plataforma <ArrowRight className="ml-2 h-4 w-4" />
+                  <feature.icon className="h-4 w-4 text-[#59C5B3] flex-shrink-0" />
+                  <span>{feature.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: "0.3s" }}>
+              <Link href="https://dashboard.guiasdigitales.mx" target="_blank">
+                <Button size="lg" className="bg-[#0F7A7E] hover:bg-[#0F7A7E]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#0F7A7E]/25 hover:shadow-xl hover:shadow-[#0F7A7E]/30 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+                  Comenzar ahora
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+              <a href="#beneficios">
+                <Button size="lg" variant="outline" className="border-[#F7A23B] text-[#F7A23B] bg-[#F7A23B]/10 hover:bg-[#F7A23B] hover:text-[#0B0A16] px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+                  Ver beneficios
+                  <Zap className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+            </div>
+
+            {/* Logos */}
+            <div className="flex items-center gap-6 justify-center lg:justify-start pt-4 animate-slide-up" style={{ animationDelay: "0.4s" }}>
               <Image
                 src="/images/logo-gdmx-transparent.png"
                 alt="GDMX Logistics"
-                width={160}
-                height={120}
-                className="h-9 md:h-11 lg:h-12 w-auto transition-transform duration-300 hover:scale-105"
-                priority={false}
+                width={120}
+                height={80}
+                className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity invert"
               />
-            </div>
-
-            {/* Columna 2: Ver beneficios + logo Guías Digitales */}
-            <div className="flex flex-col items-center gap-3 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
-              <a href="#beneficios" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="bg-[#F7A23B] text-[#0B0A16] hover:bg-[#E89529] focus-visible:ring-[#F7A23B]/30 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-                >
-                  Ver beneficios <Package className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
+              <div className="h-8 w-px bg-white/20" />
               <Image
                 src="/images/logo_guias_hero.png"
                 alt="Guías Digitales MX"
-                width={160}
-                height={120}
-                className="h-8 md:h-9 lg:h-10 w-auto transition-transform duration-300 hover:scale-105"
-                priority={false}
+                width={120}
+                height={80}
+                className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity invert"
               />
+            </div>
+          </div>
+
+          {/* Right column - Visual */}
+          <div className="relative animate-slide-up hidden lg:block" style={{ animationDelay: "0.5s" }}>
+            <div className="relative">
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#0F7A7E]/30 to-[#59C5B3]/30 rounded-2xl blur-2xl animate-glow" />
+              
+              {/* Main image */}
+              <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-2 shadow-2xl">
+                <Image
+                  src="/images/login-hero.png"
+                  alt="Plataforma Guías Digitales MX"
+                  width={800}
+                  height={600}
+                  className="rounded-xl w-full h-auto"
+                  priority
+                />
+              </div>
+
+              {/* Floating stats cards */}
+              <div className="absolute -left-8 top-1/4 rounded-xl border border-white/10 bg-[#0B0A16]/90 backdrop-blur-xl p-4 shadow-xl animate-float">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-lg bg-[#0F7A7E] flex items-center justify-center">
+                    <Package className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white">1.5M+</div>
+                    <div className="text-xs text-white/60">Envíos entregados</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -right-4 bottom-1/4 rounded-xl border border-white/10 bg-[#0B0A16]/90 backdrop-blur-xl p-4 shadow-xl animate-float" style={{ animationDelay: "1s" }}>
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-lg bg-[#F7A23B] flex items-center justify-center">
+                    <Percent className="h-5 w-5 text-[#0B0A16]" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white">60%</div>
+                    <div className="text-xs text-white/60">Ahorro promedio</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Imagen derecha: screenshot de Inicio de sesión */}
-        <div className="relative animate-fade-in-up order-first md:order-last" style={{ animationDelay: "600ms" }}>
-          <div className="relative mx-auto w-full max-w-[560px] overflow-visible">
-            <Image
-              src="/images/login-hero.png"
-              alt="Inicio de sesión · Guías Digitales MX"
-              width={1600}
-              height={1000}
-              className="h-auto w-full rounded-xl border-2 border-[#59C5B3]/30 bg-white shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/20 hover:scale-[1.02]"
-              priority
-            />
+        {/* Mobile badge */}
+        <div className="mt-8 text-center lg:hidden animate-slide-up" style={{ animationDelay: "0.5s" }}>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#59C5B3]/30 bg-white/5 backdrop-blur-xl px-4 py-2 text-sm text-white/90">
+            <span className="text-lg">🇲🇽</span>
+            <span>100% Mexicana, orgullosamente Tapatía</span>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-          opacity: 0;
-        }
-
-        @keyframes gentle-glow {
-          0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.6;
-            transform: scale(1.05);
-          }
-        }
-        .animate-gentle-glow {
-          animation: gentle-glow 4s ease-in-out infinite;
-        }
-
-        @keyframes slide-in-badge {
-          0% {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        .animate-slide-in-badge {
-          animation: slide-in-badge 0.8s ease-out forwards;
-        }
-      `}</style>
     </section>
   )
 }
