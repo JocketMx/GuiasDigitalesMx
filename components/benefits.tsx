@@ -68,7 +68,7 @@ export default function Benefits() {
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B0A16] mb-4">
             Todo lo que necesitas para
-            <span className="block gradient-text">escalar tus envíos</span>
+            <span className="block text-[#0F7A7E]">escalar tus envios</span>
           </h2>
           <p className="text-lg text-[#0B0A16]/60 max-w-2xl mx-auto">
             12 años de experiencia en logística, ahora en una plataforma digital con las herramientas más avanzadas del mercado.

@@ -56,8 +56,8 @@ export default function Showcase() {
             Interfaz intuitiva
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B0A16] mb-4">
-            Plataforma diseñada para
-            <span className="block gradient-text">decidir rápido</span>
+            Plataforma disenada para
+            <span className="block text-[#0F7A7E]">decidir rapido</span>
           </h2>
           <p className="text-lg text-[#0B0A16]/60 max-w-2xl mx-auto">
             Menos clics, más control y visibilidad total de tus envíos.
