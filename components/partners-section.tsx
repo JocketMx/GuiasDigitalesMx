@@ -12,12 +12,13 @@ type Partner = {
 
 export default function PartnersSection() {
   const partners: Partner[] = [
-    // DHL ahora usa el JPEG con "EXPRESS"
     { name: "DHL", src: "/images/partners/dhl.jpeg", href: "https://www.dhl.com/mx-es/home.html" },
     { name: "FedEx", src: "/images/partners/fedex.png", href: "https://www.fedex.com/es-mx/home.html" },
-    // Estafeta ahora usa el JPEG con "Soluciones Logísticas"
     { name: "Estafeta", src: "/images/partners/estafeta.jpeg", href: "https://www.estafeta.com/" },
     { name: "UPS", src: "/images/partners/ups.png", href: "https://www.ups.com/mx/es/Home.page" },
+    { name: "Paquetexpress", src: "/images/partners/paquetexpress.png", href: "https://www.paquetexpress.com.mx/" },
+    { name: "AMPM", src: "/images/partners/ampm.png", href: "https://www.grupoampm.com.mx/" },
+    { name: "99 Minutos", src: "/images/partners/99minutos.png", href: "https://www.99minutos.com/" },
   ]
 
   return (
@@ -48,39 +49,12 @@ export default function PartnersSection() {
           <p className="mt-3 text-brand-ink/70">Trabajamos con las principales paqueterías para mover tu negocio.</p>
         </div>
 
-        {/* Grilla uniforme: mismas bases, mismos gutters, misma altura interna */}
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        {/* Grilla responsive para 7 partners */}
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
           {partners.map((p, index) => {
-            const key = p.name.toLowerCase()
-            const isDHL = key === "dhl"
-            const isUPS = key === "ups"
-            const isEstafeta = key === "estafeta"
+            const cardClass = "group relative rounded-xl border-2 border-[#0F7A7E]/20 bg-white/95 backdrop-blur-sm p-4 shadow-sm transition-all duration-300 hover:translate-y-[-4px] hover:shadow-xl hover:shadow-[#0F7A7E]/20 hover:border-[#0F7A7E]/50 focus:outline-none focus-visible:ring-4 animate-fade-in-up"
 
-            const cardClass = cn(
-              "group rounded-xl border-2 border-[#0F7A7E]/20 bg-white/95 backdrop-blur-sm p-6 shadow-sm transition-all duration-300 hover:translate-y-[-4px] hover:shadow-xl hover:shadow-[#0F7A7E]/20 focus:outline-none focus-visible:ring-4 animate-fade-in-up",
-              // Estilos por marca
-              isDHL && "hover:border-[#FFCC00]/70 focus-visible:ring-[#FFCC00]/30",
-              isEstafeta && "hover:border-[#CC2229]/70 focus-visible:ring-[#CC2229]/30",
-              isUPS && "hover:border-[#6B4F1D]/60 focus-visible:ring-[#6B4F1D]/25",
-              // Estilo por defecto para FedEx
-              !isDHL && !isEstafeta && !isUPS && "hover:border-[#0F7A7E]/50 focus-visible:ring-[#59C5B3]/30",
-            )
-
-            // Tamaños armonizados: Estafeta/DHL/UPS un poco más grandes
-            const imgClass = cn(
-              "w-auto object-contain transition-transform duration-300 group-hover:scale-105",
-              isEstafeta
-                ? "w-full h-auto max-h-20 sm:max-h-24"
-                : // Estafeta cubre el ancho, altura auto
-                  isDHL || isUPS
-                  ? "h-16 sm:h-20"
-                  : // DHL y UPS con altura fija
-                    "h-12 sm:h-14", // FedEx con altura por defecto
-            )
-
-            // Ancho y alto para Next/Image, el tamaño real lo controla Tailwind
-            const width = isEstafeta ? 600 : isDHL || isUPS ? 320 : 240
-            const height = isEstafeta ? 150 : isDHL || isUPS ? 140 : 100
+            const imgClass = "w-auto h-10 sm:h-12 object-contain transition-transform duration-300 group-hover:scale-105"
 
             return (
               <a
@@ -92,15 +66,13 @@ export default function PartnersSection() {
                 className={cardClass}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Contenedor de altura fija para alinear tarjetas sin "saltos" */}
-                <div className="flex h-24 items-center justify-center sm:h-28">
+                <div className="flex h-16 items-center justify-center sm:h-20">
                   <Image
-                    src={p.src || "/placeholder.svg?height=80&width=220&query=partner%20logo%20placeholder"}
+                    src={p.src}
                     alt={`${p.name} logo`}
-                    width={width}
-                    height={height}
+                    width={200}
+                    height={80}
                     className={imgClass}
-                    priority={false}
                   />
                 </div>
 
