@@ -27,28 +27,24 @@ export default function Navbar() {
   ]
 
   return (
-    <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-      scrolled 
-        ? "bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-lg" 
-        : "bg-transparent"
-    }`}>
-      <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-4">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="#" className="flex items-center gap-3" aria-label="Inicio">
           <Image
             src="/images/logo_gdmx.png"
             alt="GDMX Logistics"
             width={120}
             height={40}
-            className={`hidden h-7 w-auto md:block transition-all duration-300 ${scrolled ? "opacity-100" : "opacity-90 invert"}`}
+            className="hidden h-7 w-auto md:block"
             priority={false}
           />
-          <span className={`hidden h-7 w-px md:block transition-colors duration-300 ${scrolled ? "bg-gray-300" : "bg-white/30"}`} aria-hidden />
+          <span className="hidden h-7 w-px bg-gray-300 md:block" aria-hidden />
           <Image
             src="/images/logo_guias_transparente.png"
             alt="Guías Digitales MX"
             width={140}
             height={40}
-            className={`h-8 w-auto md:h-9 transition-all duration-300 ${scrolled ? "" : "invert"}`}
+            className="h-8 w-auto md:h-9"
             priority
           />
           <span className="sr-only">GDMX Logistics y Guías Digitales MX</span>
@@ -59,11 +55,7 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className={`group relative text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
-                scrolled 
-                  ? "text-[#0B0A16]/70 hover:text-[#0F7A7E] hover:bg-[#0F7A7E]/5" 
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
+              className="text-sm font-medium px-4 py-2 rounded-full text-[#0B0A16]/70 hover:text-[#0F7A7E] hover:bg-[#0F7A7E]/5 transition-all duration-300"
             >
               {l.label}
             </Link>
@@ -82,23 +74,19 @@ export default function Navbar() {
               <Button
                 size="icon"
                 variant="ghost"
-                className={`transition-all duration-300 ${
-                  scrolled 
-                    ? "text-[#0B0A16] hover:bg-[#0F7A7E]/10" 
-                    : "text-white hover:bg-white/10"
-                }`}
+                className="text-[#0B0A16] hover:bg-[#0F7A7E]/10"
                 aria-label="Abrir menú"
               >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-[#0B0A16] border-l border-white/10">
+            <SheetContent side="right" className="bg-white border-l border-gray-200">
               <div className="mt-8 grid gap-2">
                 {links.map((l) => (
                   <Link
                     key={l.href}
                     href={l.href}
-                    className="text-lg text-white/70 hover:text-white hover:bg-white/5 px-4 py-3 rounded-xl transition-all duration-300"
+                    className="text-lg text-[#0B0A16]/70 hover:text-[#0F7A7E] hover:bg-[#0F7A7E]/5 px-4 py-3 rounded-xl transition-all duration-300"
                   >
                     {l.label}
                   </Link>
