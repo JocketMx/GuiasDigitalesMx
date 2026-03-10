@@ -14,16 +14,16 @@ export default function MetricsSection() {
     },
     {
       icon: Clock,
-      number: "4 min",
+      number: "1 min",
       label: "Tiempo promedio",
       description: "De cotización a guía lista",
       color: "from-[#59C5B3] to-[#0F7A7E]",
     },
     {
       icon: TrendingUp,
-      number: "85%",
-      label: "Ahorro de tiempo",
-      description: "vs. proceso manual tradicional",
+      number: "60%",
+      label: "Ahorro garantizado",
+      description: "vs. tarifas tradicionales",
       color: "from-[#0F7A7E] to-[#59C5B3]",
     },
     {
@@ -50,109 +50,49 @@ export default function MetricsSection() {
   ]
 
   return (
-    <section className="relative w-full py-16 md:py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50/50">
-      {/* Marco decorativo animado */}
-      <div className="absolute inset-4 -z-10 rounded-3xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#0F7A7E]/5 via-transparent to-[#59C5B3]/5 overflow-hidden">
-        <div className="absolute inset-4 rounded-2xl border border-[#59C5B3]/30 animate-pulse" />
-
-        {/* Elementos decorativos contenidos */}
-        <div
-          className="pointer-events-none absolute top-4 left-4 h-32 w-32 rounded-full bg-[#59C5B3]/25 blur-3xl animate-bounce"
-          style={{ animationDuration: "3s" }}
-        />
-        <div
-          className="pointer-events-none absolute bottom-4 right-4 h-32 w-32 rounded-full bg-[#0F7A7E]/30 blur-3xl animate-bounce"
-          style={{ animationDuration: "4s", animationDelay: "1s" }}
-        />
-      </div>
-
+    <section className="relative w-full py-16 md:py-24 overflow-hidden bg-[#0F7A7E]">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#0F7A7E]/30 bg-[#0F7A7E]/10 px-4 py-2 text-sm font-medium text-[#0F7A7E] mb-4 animate-pulse">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white mb-6">
             <TrendingUp className="h-4 w-4" />
             Resultados medibles
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-[#0F7A7E] sm:text-4xl">
-            Números que hablan por sí solos
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Numeros que hablan por si solos
           </h2>
-          <p className="mt-3 text-brand-ink/70">
-            La confianza de nuestros clientes se refleja en estas métricas reales.
+          <p className="text-lg text-white/80">
+            La confianza de nuestros clientes se refleja en estas metricas reales.
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {metrics.map((metric, index) => (
+          {metrics.map((metric) => (
             <Card
               key={metric.label}
-              className="group border-2 border-[#0F7A7E]/20 bg-white/95 backdrop-blur-sm transition-all duration-300 hover:translate-y-[-4px] hover:border-[#0F7A7E]/50 hover:shadow-xl hover:shadow-[#0F7A7E]/20 animate-fade-in-up overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group border border-white/20 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
             >
-              <CardContent className="p-6 relative">
-                {/* Icono con gradiente */}
-                <div className="flex items-center justify-between mb-4">
-                  <div
-                    className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${metric.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                  >
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-white flex items-center justify-center text-[#0F7A7E]">
                     <metric.icon className="h-6 w-6" />
                   </div>
-                  {/* Elemento decorativo */}
-                  <div
-                    className={`h-2 w-16 rounded-full bg-gradient-to-r ${metric.color} opacity-60 group-hover:opacity-100 transition-opacity duration-300`}
-                  />
-                </div>
-
-                {/* Número principal */}
-                <div className="mb-2">
-                  <div
-                    className={`text-3xl font-bold bg-gradient-to-r ${metric.color} bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300 inline-block`}
-                  >
+                  <div className="text-4xl font-bold text-white">
                     {metric.number}
                   </div>
                 </div>
-
-                {/* Label y descripción */}
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-brand-ink group-hover:text-[#0F7A7E] transition-colors duration-300">
-                    {metric.label}
-                  </h3>
-                  <p className="text-sm text-brand-ink/70 group-hover:text-brand-ink/90 transition-colors duration-300">
-                    {metric.description}
-                  </p>
-                </div>
-
-                {/* Línea decorativa animada */}
-                <div
-                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${metric.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                />
+                <h3 className="font-semibold text-white mb-1">{metric.label}</h3>
+                <p className="text-sm text-white/70">{metric.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Texto adicional */}
         <div className="mt-12 text-center">
-          <p className="text-brand-ink/60 text-sm">
-            * Métricas actualizadas mensualmente · Datos de los últimos 12 meses
+          <p className="text-white/60 text-sm">
+            * Metricas actualizadas mensualmente
           </p>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-          opacity: 0;
-        }
-      `}</style>
     </section>
   )
 }

@@ -3,189 +3,225 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, Plane, Package, Percent } from "lucide-react"
+import { ArrowRight, ShieldCheck, Zap, Package, Percent, Clock, MapPin, Truck, AlertCircle } from "lucide-react"
+import { useState, useEffect } from "react"
+
+const screenshots = [
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-03-10%20a%20la%28s%29%2010.22.29-N4N29JDRaVId0UwPe34dSnDbPE2NYf.png",
+    alt: "Cotizador de guias - Compara precios de paqueterias",
+    label: "Cotizador"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-03-10%20a%20la%28s%29%2010.23.37-mJVNlKMIaoG1l3t7AOHrrsAJ9CKFlt.png",
+    alt: "Historial de guias - Estatus en tiempo real",
+    label: "Rastreo"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-03-10%20a%20la%28s%29%2010.22.47-myhxSys564dhEKqWEDYIF3dnG6Q0I8.png",
+    alt: "Validador de zonas remotas",
+    label: "Zonas"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-03-10%20a%20la%28s%29%2010.25.56-HWXYJU2H2tgDorG5hVGj8WbgyylYnw.png",
+    alt: "Modulo de incidencias",
+    label: "Incidencias"
+  }
+]
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % screenshots.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const features = [
+    { icon: MapPin, text: "Estatus en tiempo real" },
+    { icon: Truck, text: "Recolecciones a domicilio" },
+    { icon: AlertCircle, text: "Modulo de incidencias" },
+    { icon: Zap, text: "API para tiendas online" },
+  ]
+
   return (
-    <section className="relative w-full py-14 md:py-20 overflow-hidden bg-white">
-      {/* Marco decorativo animado */}
-      <div className="absolute inset-4 -z-10 rounded-3xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#0F7A7E]/5 via-transparent to-[#59C5B3]/5 overflow-hidden">
-        <div className="absolute inset-4 rounded-2xl border border-[#59C5B3]/30 animate-gentle-glow" />
-
-        {/* Elementos decorativos contenidos - solo verde */}
-        <div
-          className="pointer-events-none absolute top-4 left-4 h-32 w-32 rounded-full bg-[#59C5B3]/25 blur-3xl animate-bounce"
-          style={{ animationDuration: "3s" }}
-        />
-        <div
-          className="pointer-events-none absolute bottom-4 right-4 h-32 w-32 rounded-full bg-[#59C5B3]/30 blur-3xl animate-bounce"
-          style={{ animationDuration: "4s", animationDelay: "1s" }}
-        />
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0F7A7E]/20 blur-2xl animate-gentle-glow" />
-
-        {/* Elementos decorativos adicionales - solo verde */}
-        <div
-          className="pointer-events-none absolute top-1/4 right-1/4 h-16 w-16 rounded-full bg-[#59C5B3]/20 blur-2xl animate-gentle-glow"
-          style={{ animationDelay: "2s" }}
-        />
-        <div
-          className="pointer-events-none absolute bottom-1/4 left-1/4 h-20 w-20 rounded-full bg-[#59C5B3]/20 blur-2xl animate-bounce"
-          style={{ animationDuration: "5s", animationDelay: "3s" }}
-        />
+    <section className="relative w-full py-16 md:py-24 overflow-hidden bg-gradient-to-br from-white via-[#0F7A7E]/5 to-[#59C5B3]/10">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 w-72 h-72 bg-[#0F7A7E]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-64 h-64 bg-[#59C5B3]/10 rounded-full blur-3xl" />
       </div>
 
-      {/* Badge de empresa mexicana - optimizado para móvil */}
-      <div
-        className="absolute top-4 right-4 z-30 animate-fade-in-up max-w-[calc(100vw-2rem)] md:max-w-none"
-        style={{ animationDelay: "1s" }}
-      >
-        <div className="inline-flex items-center gap-1.5 md:gap-2 rounded-full border-2 border-[#0F7A7E]/40 bg-white/95 backdrop-blur-sm px-2 md:px-3 py-1 md:py-1.5 text-[10px] md:text-xs text-[#0F7A7E] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          <span className="text-xs md:text-sm flex-shrink-0">🇲🇽</span>
-          <span className="font-semibold leading-tight">
-            <span className="hidden sm:inline">Empresa 100% Mexicana, orgullosamente Tapatía</span>
-            <span className="sm:hidden">100% Mexicana</span>
-          </span>
+      <div className="absolute top-4 right-4 z-30 hidden md:block">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E] shadow-sm">
+          <span className="text-lg">🇲🇽</span>
+          <span className="font-medium">Empresa 100% Mexicana, orgullosamente Tapatia</span>
         </div>
       </div>
 
-      <div className="container mx-auto grid gap-8 md:gap-10 px-4 md:grid-cols-2 md:items-center relative z-10">
-        <div className="space-y-4 md:space-y-6 animate-fade-in-up pt-12 md:pt-0">
-          {/* Badges reorganizados para móvil */}
-          <div className="flex flex-col gap-2 md:gap-3">
-            <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#59C5B3]/50 bg-white px-3 py-1 text-xs text-[#0F7A7E] shadow-sm animate-slide-in-badge w-fit">
-              <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0" />
-              <span className="whitespace-nowrap">12 años impulsando logística en México</span>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="space-y-6 text-center lg:text-left">
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/30 bg-[#0F7A7E]/10 px-4 py-2 text-sm text-[#0F7A7E] font-medium">
+                <ShieldCheck className="h-4 w-4" />
+                <span>12 anos de experiencia</span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#F7A23B]/40 bg-[#F7A23B]/10 px-4 py-2 text-sm text-[#F7A23B] font-semibold">
+                <Percent className="h-4 w-4" />
+                <span>Ahorra hasta 60%</span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/30 bg-[#0F7A7E]/10 px-4 py-2 text-sm text-[#0F7A7E] font-medium">
+                <Clock className="h-4 w-4" />
+                <span>Guia en 1 minuto</span>
+              </div>
             </div>
 
-            <div
-              className="inline-flex items-center gap-2 rounded-full border-2 border-[#0F7A7E]/50 bg-[#0F7A7E]/10 px-3 py-1 text-xs text-[#0F7A7E] font-semibold shadow-sm animate-slide-in-badge w-fit"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <Percent className="h-3.5 w-3.5 flex-shrink-0" />
-              <span className="whitespace-nowrap">Ahorra más del 50% en tus envíos</span>
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0B0A16] leading-[1.1]">
+                La plataforma
+                <span className="block text-[#0F7A7E]">completa de envios</span>
+                para tu negocio
+              </h1>
+              <p className="text-lg md:text-xl text-[#0B0A16]/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Cotiza, compara y genera guias 24/7. Con estatus en tiempo real, recolecciones, 
+                modulo de incidencias y API para conectar tus tiendas.
+              </p>
             </div>
-          </div>
 
-          <div className="flex items-start gap-3 mb-4">
-            <div
-              className="inline-flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#0F7A7E] to-[#59C5B3] text-white shadow-lg animate-bounce flex-shrink-0 mt-1"
-              style={{ animationDuration: "2s" }}
-            >
-              <Plane className="h-5 w-5 md:h-6 md:w-6" />
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#0F7A7E] leading-tight">
-              Envíos inteligentes para negocios reales
-            </h1>
-          </div>
-
-          <p className="text-base md:text-lg text-brand-ink/80 leading-relaxed">
-            Convierte tu logística en una ventaja competitiva: cotiza, compara y crea guías 24/7 con el respaldo humano
-            de GDMX Logistics. <span className="font-semibold text-[#0F7A7E]">Imprime tu guía y ya.</span>
-          </p>
-
-          {/* Botones y logos optimizados para móvil */}
-          <div className="grid gap-4 sm:grid-cols-2">
-            {/* Columna 1: Ir a la Plataforma + logo GDMX */}
-            <div className="flex flex-col items-center gap-3 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-              <Link href="https://dashboard.guiasdigitales.mx" target="_blank" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="bg-[#0F7A7E] hover:bg-[#17A2A6] text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+            <div className="grid grid-cols-2 gap-3 max-w-lg mx-auto lg:mx-0">
+              {features.map((feature, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-2 rounded-xl border border-[#0F7A7E]/20 bg-white px-4 py-3 text-sm text-[#0B0A16]/80 shadow-sm hover:shadow-md hover:border-[#0F7A7E]/40 transition-all duration-300"
                 >
-                  Ir a la Plataforma <ArrowRight className="ml-2 h-4 w-4" />
+                  <feature.icon className="h-4 w-4 text-[#0F7A7E] flex-shrink-0" />
+                  <span>{feature.text}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link href="https://dashboard.guiasdigitales.mx" target="_blank">
+                <Button size="lg" className="bg-[#0F7A7E] hover:bg-[#0F7A7E]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#0F7A7E]/25 hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+                  Comenzar ahora
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+              <a href="#beneficios">
+                <Button size="lg" className="bg-[#F7A23B] text-[#0B0A16] hover:bg-[#F7A23B]/90 px-8 py-6 text-lg rounded-xl shadow-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+                  Ver beneficios
+                  <Zap className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+            </div>
+
+            <div className="flex items-center gap-6 justify-center lg:justify-start pt-4">
               <Image
                 src="/images/logo-gdmx-transparent.png"
                 alt="GDMX Logistics"
-                width={160}
-                height={120}
-                className="h-9 md:h-11 lg:h-12 w-auto transition-transform duration-300 hover:scale-105"
-                priority={false}
+                width={120}
+                height={80}
+                className="h-10 w-auto"
               />
-            </div>
-
-            {/* Columna 2: Ver beneficios + logo Guías Digitales */}
-            <div className="flex flex-col items-center gap-3 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
-              <a href="#beneficios" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="bg-[#F7A23B] text-[#0B0A16] hover:bg-[#E89529] focus-visible:ring-[#F7A23B]/30 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-                >
-                  Ver beneficios <Package className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
+              <div className="h-8 w-px bg-[#0B0A16]/20" />
               <Image
                 src="/images/logo_guias_hero.png"
-                alt="Guías Digitales MX"
-                width={160}
-                height={120}
-                className="h-8 md:h-9 lg:h-10 w-auto transition-transform duration-300 hover:scale-105"
-                priority={false}
+                alt="Guias Digitales MX"
+                width={120}
+                height={80}
+                className="h-8 w-auto"
               />
+            </div>
+          </div>
+
+          {/* Right column - Screenshot Carousel */}
+          <div className="relative hidden lg:block">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#0F7A7E]/20 to-[#59C5B3]/20 rounded-2xl blur-xl" />
+              
+              {/* Screenshot carousel */}
+              <div className="relative rounded-2xl border-2 border-[#0F7A7E]/20 bg-white p-2 shadow-2xl overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-white">
+                  {screenshots.map((screenshot, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-all duration-700 ease-in-out flex items-center justify-center bg-white ${
+                        index === currentSlide 
+                          ? "opacity-100 translate-x-0" 
+                          : index < currentSlide 
+                            ? "opacity-0 -translate-x-full" 
+                            : "opacity-0 translate-x-full"
+                      }`}
+                    >
+                      <Image
+                        src={screenshot.src}
+                        alt={screenshot.alt}
+                        fill
+                        className="object-contain object-center"
+                        priority={index === 0}
+                      />
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Slide indicators */}
+                <div className="flex items-center justify-center gap-2 mt-3 pb-1">
+                  {screenshots.map((screenshot, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`transition-all duration-300 ${
+                        index === currentSlide 
+                          ? "bg-[#0F7A7E] px-4 py-1 rounded-full" 
+                          : "bg-[#0F7A7E]/20 w-2 h-2 rounded-full hover:bg-[#0F7A7E]/40"
+                      }`}
+                    >
+                      {index === currentSlide && (
+                        <span className="text-white text-xs font-medium">{screenshot.label}</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Floating stats cards */}
+              <div className="absolute -left-6 top-1/4 rounded-xl border border-[#0F7A7E]/20 bg-white p-4 shadow-xl animate-bounce" style={{ animationDuration: "3s" }}>
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-lg bg-[#0F7A7E] flex items-center justify-center">
+                    <Package className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[#0B0A16]">1.5M+</div>
+                    <div className="text-xs text-[#0B0A16]/60">Envios entregados</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -right-4 bottom-1/4 rounded-xl border border-[#F7A23B]/30 bg-white p-4 shadow-xl animate-bounce" style={{ animationDuration: "3.5s", animationDelay: "0.5s" }}>
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-lg bg-[#F7A23B] flex items-center justify-center">
+                    <Percent className="h-5 w-5 text-[#0B0A16]" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[#0B0A16]">60%</div>
+                    <div className="text-xs text-[#0B0A16]/60">Ahorro promedio</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Imagen derecha: screenshot de Inicio de sesión */}
-        <div className="relative animate-fade-in-up order-first md:order-last" style={{ animationDelay: "600ms" }}>
-          <div className="relative mx-auto w-full max-w-[560px] overflow-visible">
-            <Image
-              src="/images/login-hero.png"
-              alt="Inicio de sesión · Guías Digitales MX"
-              width={1600}
-              height={1000}
-              className="h-auto w-full rounded-xl border-2 border-[#59C5B3]/30 bg-white shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/20 hover:scale-[1.02]"
-              priority
-            />
+        {/* Mobile badge */}
+        <div className="mt-8 text-center lg:hidden">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E]">
+            <span className="text-lg">🇲🇽</span>
+            <span>100% Mexicana, orgullosamente Tapatia</span>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-          opacity: 0;
-        }
-
-        @keyframes gentle-glow {
-          0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.6;
-            transform: scale(1.05);
-          }
-        }
-        .animate-gentle-glow {
-          animation: gentle-glow 4s ease-in-out infinite;
-        }
-
-        @keyframes slide-in-badge {
-          0% {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        .animate-slide-in-badge {
-          animation: slide-in-badge 0.8s ease-out forwards;
-        }
-      `}</style>
     </section>
   )
 }
