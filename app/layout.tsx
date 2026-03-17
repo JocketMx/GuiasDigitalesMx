@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import { OrganizationSchema, LocalBusinessSchema } from "@/lib/schema-components"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://guiasdigitales.mx"),
@@ -45,6 +46,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <OrganizationSchema />
+        <LocalBusinessSchema />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0F7A7E" />
+      </head>
       <body>{children}</body>
     </html>
   )
