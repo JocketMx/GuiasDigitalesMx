@@ -1,17 +1,23 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import { OrganizationSchema, LocalBusinessSchema } from "@/lib/schema-components"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://guiasdigitales.mx"),
   title: "Guías Digitales MX - La Plataforma Completa de Envíos",
   description:
     "Plataforma 24/7 para cotizar, comparar y crear guías de envío. Ahorra hasta 60% con crédito, notificaciones automáticas, facturación y API.",
   keywords: "logística, envíos, paquetería, guías digitales, GDMX, México, e-commerce, shipping, API, facturación, crédito",
   authors: [{ name: "GDMX Logistics" }],
+  alternates: {
+    canonical: "https://guiasdigitales.mx",
+  },
   openGraph: {
     title: "Guías Digitales MX - La Plataforma Completa de Envíos",
     description: "Ahorra hasta 60% en envíos. Crédito, notificaciones automáticas, facturación en línea y API para tu negocio.",
     siteName: "Guías Digitales MX",
+    url: "https://guiasdigitales.mx",
     images: [{ url: "/opengraph-image.png" }],
     locale: "es_MX",
     type: "website",
@@ -40,6 +46,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <OrganizationSchema />
+        <LocalBusinessSchema />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0F7A7E" />
+      </head>
       <body>{children}</body>
     </html>
   )
