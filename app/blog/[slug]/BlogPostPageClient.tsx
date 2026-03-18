@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, Share2, Tag } from "lucide-react"
 import type { BlogPost } from "@/lib/blog-data"
+import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema-components"
 
 type Props = {
   post: BlogPost
@@ -13,6 +14,12 @@ type Props = {
 }
 
 export default function BlogPostPageClient({ post, relatedPosts }: Props) {
+  const breadcrumbItems = [
+    { name: 'Inicio', url: 'https://guiasdigitales.mx' },
+    { name: 'Blog', url: 'https://guiasdigitales.mx/blog' },
+    { name: post.title, url: `https://guiasdigitales.mx/blog/${post.id}` },
+  ]
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
     return date.toLocaleDateString("es-MX", {
@@ -139,6 +146,17 @@ export default function BlogPostPageClient({ post, relatedPosts }: Props) {
 
   return (
     <div className="relative w-full py-16 md:py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50/50">
+      <ArticleSchema
+        title={post.title}
+        description={post.excerpt}
+        image={`https://guiasdigitales.mx${post.image}`}
+        datePublished={post.date}
+        dateModified={post.date}
+        author={post.author.name}
+        url={`https://guiasdigitales.mx/blog/${post.id}`}
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       {/* Marco decorativo animado */}
       <div className="absolute inset-4 -z-10 rounded-3xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#0F7A7E]/5 via-transparent to-[#59C5B3]/5 overflow-hidden">
         <div className="absolute inset-4 rounded-2xl border border-[#59C5B3]/30 animate-gentle-glow" />
@@ -206,7 +224,7 @@ export default function BlogPostPageClient({ post, relatedPosts }: Props) {
           <div className="flex flex-wrap items-center gap-6 text-sm text-brand-ink/60 mb-6">
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
-              {formatDate(post.date)}
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4" />

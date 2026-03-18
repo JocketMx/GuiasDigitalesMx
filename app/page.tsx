@@ -16,10 +16,13 @@ import MetricsSection from "@/components/metrics-section"
 import PamexPartnership from "@/components/pamex-partnership"
 import EntreperfumesPartnership from "@/components/entreperfumes-partnership"
 import BlogSection from "@/components/blog-section"
+import FAQSection, { faqItems } from "@/components/faq-section"
+import { FAQSchema } from "@/lib/schema-components"
 
 export default function Page() {
   return (
     <div className="flex min-h-screen flex-col">
+      <FAQSchema faqs={faqItems} />
       <Navbar />
       <main className="flex-1">
         <Hero />
@@ -31,6 +34,7 @@ export default function Page() {
         <ClientsSection />
         <PartnersSection />
         <BlogSection />
+        <FAQSection />
         <Testimonials />
 
         {/* CTA Section - Clean light style */}
