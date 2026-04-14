@@ -18,6 +18,7 @@ import EntreperfumesPartnership from "@/components/entreperfumes-partnership"
 import BlogSection from "@/components/blog-section"
 import FAQSection, { faqItems } from "@/components/faq-section"
 import { FAQSchema } from "@/lib/schema-components"
+import AnalyticsFeature from "@/components/analytics-feature"
 
 export default function Page() {
   return (
@@ -28,6 +29,7 @@ export default function Page() {
         <Hero />
         <Benefits />
         <Showcase />
+        <AnalyticsFeature />
         <PamexPartnership />
         <EntreperfumesPartnership />
         <MetricsSection />
