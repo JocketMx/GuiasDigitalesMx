@@ -1,10 +1,11 @@
 import { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-data'
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://guiasdigitales.mx'
   
-  // Paginas estaticas
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -20,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
   
-  // Paginas del blog dinamicas
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.id}`,
     lastModified: new Date(post.date),
