@@ -3,12 +3,12 @@
 export default function LogisticsAnimation() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Delivery truck — main, top lane */}
+      {/* Delivery truck — travels between the country badge and the feature pills */}
       <div
         className="absolute"
         style={{
           animation: "driveAcross 22s linear infinite",
-          top: "16%",
+          top: "11%",
         }}
       >
         <div className="relative flex items-center gap-0.5">
