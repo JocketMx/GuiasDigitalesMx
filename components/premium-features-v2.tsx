@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { MessageCircle, CreditCard, Code, BarChart3, CheckCircle, Zap } from "lucide-react"
 
 export default function PremiumFeaturesV2() {
@@ -67,28 +68,72 @@ export default function PremiumFeaturesV2() {
         </div>
 
         <div className="grid gap-6 lg:gap-8">
-          {/* Top row: 2 highlighted features */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {features.slice(0, 2).map((feature, idx) => (
-              <div
-                key={idx}
-                className={`relative group p-8 rounded-2xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br ${feature.color} hover:border-[#0F7A7E]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/20`}
-              >
-                <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold">
-                  <Zap className="h-3 w-3" />
-                  Destacado
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="h-14 w-14 rounded-xl bg-[#0F7A7E] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <feature.icon className="h-7 w-7" />
+          {/* Top row: WhatsApp (wide) + Credits (normal) */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            {/* WhatsApp card — spans 3 cols, includes real screenshot */}
+            <div className="lg:col-span-3 relative group rounded-2xl border-2 border-[#25D366]/30 bg-gradient-to-br from-[#25D366]/10 to-[#25D366]/5 hover:border-[#25D366]/60 transition-all duration-300 hover:shadow-xl hover:shadow-[#25D366]/20 overflow-hidden">
+              <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold z-10">
+                <Zap className="h-3 w-3" />
+                Destacado
+              </div>
+              <div className="flex flex-col md:flex-row items-stretch gap-0">
+                {/* Text side */}
+                <div className="p-8 flex flex-col justify-center md:w-1/2">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="h-14 w-14 rounded-xl bg-[#25D366] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <MessageCircle className="h-7 w-7" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[#0B0A16] mb-2">Notificaciones WhatsApp en Tiempo Real</h3>
+                      <p className="text-[#0B0A16]/70 leading-relaxed text-sm">
+                        Tus clientes reciben avisos automáticos en cada etapa del envío: creado, recolectado, en tránsito y entregado. Ninguna otra plataforma lo ofrece con esta precisión.
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-[#0B0A16] mb-2">{feature.title}</h3>
-                    <p className="text-[#0B0A16]/70 leading-relaxed">{feature.description}</p>
+                  <ul className="space-y-2 mt-2">
+                    {["Envío creado con número de guía", "Envío recolectado por paquetería", "Envío en tránsito hacia destino", "Envío entregado correctamente"].map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-sm text-[#0B0A16]/80">
+                        <div className="h-4 w-4 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-[9px] font-bold">✓</span>
+                        </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/* Screenshot side */}
+                <div className="md:w-1/2 relative bg-[#ECE5DD] flex items-center justify-center p-3 min-h-[280px]">
+                  <div className="relative w-full max-w-[260px] rounded-xl overflow-hidden shadow-xl border border-black/10">
+                    <Image
+                      src="/images/whatsapp-notifications.jpeg"
+                      alt="Notificaciones WhatsApp automáticas de Guías Digitales MX"
+                      width={520}
+                      height={984}
+                      className="w-full h-auto"
+                    />
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Credits card — spans 2 cols */}
+            <div className="lg:col-span-2 relative group p-8 rounded-2xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#F7A23B]/10 to-[#F7A23B]/5 hover:border-[#0F7A7E]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/20">
+              <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold">
+                <Zap className="h-3 w-3" />
+                Destacado
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="h-14 w-14 rounded-xl bg-[#0F7A7E] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <CreditCard className="h-7 w-7" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-[#0B0A16] mb-2">Gestión de Créditos y TDC</h3>
+                  <p className="text-[#0B0A16]/70 leading-relaxed">
+                    Paga tus envíos con crédito flexible o directamente con tu tarjeta de crédito. Única en el mercado: gestiona tu línea de crédito, ve tu estado de cuenta y exporta en PDF.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Bottom row: 4 regular features */}

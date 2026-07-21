@@ -48,7 +48,7 @@ export default function Hero() {
   const features = [
     { icon: MapPin, text: "Estatus en tiempo real" },
     { icon: Truck, text: "Recolecciones a domicilio" },
-    { icon: AlertCircle, text: "Modulo de incidencias" },
+    { icon: AlertCircle, text: "Módulo de incidencias" },
     { icon: Zap, text: "API para tiendas online" },
   ]
 
@@ -73,7 +73,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/30 bg-[#0F7A7E]/10 px-4 py-2 text-sm text-[#0F7A7E] font-medium">
                 <ShieldCheck className="h-4 w-4" />
-                <span>12 anos de experiencia</span>
+                <span>12 años de experiencia</span>
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-[#F7A23B]/40 bg-[#F7A23B]/10 px-4 py-2 text-sm text-[#F7A23B] font-semibold">
                 <Percent className="h-4 w-4" />
@@ -81,7 +81,7 @@ export default function Hero() {
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/30 bg-[#0F7A7E]/10 px-4 py-2 text-sm text-[#0F7A7E] font-medium">
                 <Clock className="h-4 w-4" />
-                <span>Guia en 1 minuto</span>
+                <span>Guía en 1 minuto</span>
               </div>
             </div>
 
@@ -92,8 +92,8 @@ export default function Hero() {
                 para tu negocio
               </h1>
               <p className="text-lg md:text-xl text-[#0B0A16]/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Cotiza, compara y genera guias 24/7. Con estatus en tiempo real, recolecciones, 
-                modulo de incidencias y API para conectar tus tiendas.
+                Cotiza, compara y genera guías 24/7. Con estatus en tiempo real, recolecciones, 
+                módulo de incidencias y API para conectar tus tiendas.
               </p>
             </div>
 
@@ -149,8 +149,20 @@ export default function Hero() {
               <div className="absolute -inset-4 bg-gradient-to-r from-[#0F7A7E]/20 to-[#59C5B3]/20 rounded-2xl blur-xl" />
               
               {/* Screenshot carousel */}
-              <div className="relative rounded-2xl border-2 border-[#0F7A7E]/20 bg-white p-2 shadow-2xl overflow-hidden">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-white">
+              <div className="relative rounded-2xl border-2 border-[#0F7A7E]/30 bg-white p-2 shadow-2xl overflow-hidden">
+                {/* v2.0 banner strip at the top */}
+                <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-2 bg-gradient-to-r from-[#0F7A7E] to-[#59C5B3] rounded-t-xl">
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-white animate-pulse" />
+                    <span className="text-white text-xs font-bold tracking-widest uppercase">Dashboard v2.0</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="h-2.5 w-2.5 rounded-full bg-white/40" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-white/40" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-white/80" />
+                  </div>
+                </div>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-white mt-7">
                   {screenshots.map((screenshot, index) => (
                     <div
                       key={index}

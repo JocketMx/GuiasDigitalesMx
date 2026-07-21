@@ -62,13 +62,13 @@ export default function Page() {
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B0A16] mb-6 leading-tight">
-                Tu encargate de vender,
-                <span className="block text-[#0F7A7E]">nosotros de la logistica</span>
+                Tú encárgate de vender,
+                <span className="block text-[#0F7A7E]">nosotros de la logística</span>
               </h2>
 
               <p className="text-lg md:text-xl text-[#0B0A16]/70 mb-8 max-w-2xl mx-auto">
-                Implementa en minutos y empieza a ahorrar hasta 60% desde tu primer envio. 
-                Credito, notificaciones automaticas, facturacion y API incluidos.
+                Implementa en minutos y empieza a ahorrar hasta 60% desde tu primer envío. 
+                Crédito, notificaciones automáticas, facturación y API incluidos.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -91,10 +91,10 @@ export default function Page() {
                     <Target className="h-6 w-6 text-[#0B0A16]" />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-lg font-semibold text-[#0B0A16] mb-1">Tienes un caso especial?</h4>
+                    <h4 className="text-lg font-semibold text-[#0B0A16] mb-1">¿Tienes un caso especial?</h4>
                     <p className="text-[#0B0A16]/70">
-                      Nuestro equipo te acompana para resolverlo. 
-                      <span className="text-[#0F7A7E] font-medium"> Tecnologia cuando quieres, personas cuando lo necesitas.</span>
+                      Nuestro equipo te acompaña para resolverlo. 
+                      <span className="text-[#0F7A7E] font-medium"> Tecnología cuando quieres, personas cuando lo necesitas.</span>
                     </p>
                   </div>
                 </div>
