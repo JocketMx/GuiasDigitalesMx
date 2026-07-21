@@ -20,7 +20,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     id: "guias-digitales-v2-0",
-    title: "🎉 Guías Digitales v2.0: Notificaciones WhatsApp + Gestión de Créditos",
+    title: "Guías Digitales v2.0: Notificaciones WhatsApp + Gestión de Créditos",
     excerpt:
       "La plataforma más robusta y completa ahora disponible. Notificaciones WhatsApp en tiempo real, gestión de créditos con TDC, facturación automática, incidencias y mucho más.",
     content: `
