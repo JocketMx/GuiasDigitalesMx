@@ -18,7 +18,6 @@ import EntreperfumesPartnership from "@/components/entreperfumes-partnership"
 import BlogSection from "@/components/blog-section"
 import FAQSection, { faqItems } from "@/components/faq-section"
 import { FAQSchema } from "@/lib/schema-components"
-import { V2SoftwareAppSchema, V2FAQSchema, V2BreadcrumbSchema } from "@/lib/v2-schema-components"
 import AnalyticsFeature from "@/components/analytics-feature"
 import V2FeaturesSection from "@/components/v2-features-section"
 import DashboardShowcaseV2 from "@/components/dashboard-showcase-v2"
@@ -29,9 +28,6 @@ export default function Page() {
   return (
     <div className="flex min-h-screen flex-col">
       <FAQSchema faqs={faqItems} />
-      <V2SoftwareAppSchema />
-      <V2FAQSchema />
-      <V2BreadcrumbSchema />
       <Navbar />
       <main className="flex-1">
         <Hero />

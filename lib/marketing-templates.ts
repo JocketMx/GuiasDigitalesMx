@@ -13,7 +13,7 @@ Hola [USER_NAME],
 
 Estamos emocionados de anunciar el lanzamiento de **Guías Digitales v2.0** - la plataforma de envíos más completa de México.
 
-## 🎉 Lo Más Destacado
+## Lo Más Destacado
 
 ### Notificaciones WhatsApp en Tiempo Real
 Tus clientes reciben avisos automáticos en cada etapa del envío:
@@ -36,7 +36,7 @@ Tus clientes reciben avisos automáticos en cada etapa del envío:
 - Plugins Shopify y WordPress
 - Chat 24/7
 
-## 👉 Qué Haces Ahora
+## Qué Haces Ahora
 
 Tu cuenta se actualiza automáticamente. Solo:
 1. Accede a dashboard.guiasdigitales.mx
@@ -68,37 +68,37 @@ Hola [USER_NAME],
 
 ¡Bienvenido a Guías Digitales v2.0! Acabas de unirte a 1,500+ empresas que ya confían en nosotros.
 
-## 🚀 Primeros Pasos
+## Primeros Pasos
 
 1. **Verifica tu email** (click en enlace de confirmación)
 2. **Completa tu perfil** (nombre, empresa, dirección)
 3. **Cotiza tu primer envío** (menos de 1 minuto)
 4. **Crea tu primera guía** (10 segundos)
 
-## 💡 Tips para Empezar
+## Tips para Empezar
 
 - Usa el cotizador para ver precios de 8+ paqueterías
 - Configura notificaciones WhatsApp para tus clientes
 - Si envías más de 100/mes, solicita crédito
 - Revisa documentación: https://docs.guiasdigitales.mx
 
-## 🎁 Beneficios de v2.0
+## Beneficios de v2.0
 
-✅ Notificaciones WhatsApp en tiempo real
-✅ Créditos con tarjeta de crédito
-✅ Facturación automática
-✅ Módulo de incidencias
-✅ Plugins Shopify y WordPress
-✅ API completa
-✅ Soporte 24/7
+[Check] Notificaciones WhatsApp en tiempo real
+[Check] Créditos con tarjeta de crédito
+[Check] Facturación automática
+[Check] Módulo de incidencias
+[Check] Plugins Shopify y WordPress
+[Check] API completa
+[Check] Soporte 24/7
 
-## ❓ ¿Dudas?
+## ¿Dudas?
 
 - Webinar gratuito: Martes 10am
 - Chat en vivo: En tu dashboard
 - Email: hola@guiasdigitales.mx
 
-¡Empecemos! 🎉
+¡Empecemos!
 
 Equipo Guías Digitales
     `
@@ -111,10 +111,10 @@ export const SOCIAL_MEDIA_TEMPLATES = {
       title: "v2.0 Announcement",
       content: `Anunciamos Guías Digitales v2.0 - La plataforma de envíos más completa de México.
 
-🔔 Notificaciones WhatsApp en tiempo real
-💳 Créditos con tarjeta de crédito (¡única!)
-📄 Facturación automática
-🛒 Plugins Shopify y WordPress
+Notificaciones WhatsApp en tiempo real
+Créditos con tarjeta de crédito (¡única!)
+Facturación automática
+Plugins Shopify y WordPress
 
 1,500+ empresas ya confían en nosotros.
 1.5M envíos procesados.
@@ -130,10 +130,10 @@ export const SOCIAL_MEDIA_TEMPLATES = {
       content: `¿Sabías que Guías Digitales es la única plataforma que notifica automáticamente a tus clientes en WhatsApp?
 
 Cada envío, cada etapa:
-✅ Creado
-✅ Recolectado
-✅ En tránsito
-✅ Entregado
+- Creado
+- Recolectado
+- En tránsito
+- Entregado
 
 Resultado: Clientes informados, menos llamadas, más ventas.
 
@@ -145,13 +145,13 @@ Descubre v2.0: https://guiasdigitales.mx
   ],
   instagram: [
     {
-      caption: "¡Guías Digitales v2.0 está aquí! 🎉 Notificaciones WhatsApp + Créditos con TDC. La revolución de la logística en México. 🚀 #LogísticaMx #Ecommerce",
+      caption: "Guías Digitales v2.0 está aquí! Notificaciones WhatsApp + Créditos con TDC. La revolución de la logística en México. #LogísticaMx #Ecommerce",
       hashtags: "#LogísticaMx #Ecommerce #v2 #Automatización #Envíos #México"
     }
   ],
   twitter: [
     {
-      content: "🎉 Guías Digitales v2.0 ya está disponible. Notificaciones WhatsApp automáticas, créditos con TDC, facturación en 1 clic. Única en México. 🚀 https://guiasdigitales.mx",
+      content: "Guías Digitales v2.0 ya está disponible. Notificaciones WhatsApp automáticas, créditos con TDC, facturación en 1 clic. Única en México. https://guiasdigitales.mx",
       hashtags: "#v2 #Logística #Ecommerce #México"
     }
   ],
