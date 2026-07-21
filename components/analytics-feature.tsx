@@ -133,7 +133,7 @@ export default function AnalyticsFeature() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link href="https://dashboard.guiasdigitales.mx" target="_blank">
+          <Link href="https://dashboard.guiasdigitales.mx/metrics" target="_blank">
             <Button size="lg" className="bg-[#0F7A7E] hover:bg-[#0F7A7E]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#0F7A7E]/25 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <TrendingUp className="mr-2 h-5 w-5" />
               Acceder a mis metricas

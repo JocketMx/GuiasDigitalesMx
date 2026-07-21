@@ -5,27 +5,33 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ShieldCheck, Zap, Package, Percent, Clock, MapPin, Truck, AlertCircle } from "lucide-react"
 import { useState, useEffect } from "react"
+import LogisticsAnimation from "@/components/logistics-animation"
 
 const screenshots = [
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-03-10%20a%20la%28s%29%2010.22.29-N4N29JDRaVId0UwPe34dSnDbPE2NYf.png",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Cotizaciones-yJkZ4csHiXzQufG1Y9uOHTnOnvQXGs.png",
     alt: "Cotizador de guias - Compara precios de paqueterias",
-    label: "Cotizador"
+    label: "Cotizaciones"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-03-10%20a%20la%28s%29%2010.23.37-mJVNlKMIaoG1l3t7AOHrrsAJ9CKFlt.png",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.27.24-dexnn2qjgZoZrkcFPQoofHQiWkYfdM.png",
     alt: "Historial de guias - Estatus en tiempo real",
-    label: "Rastreo"
+    label: "Guias"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-03-10%20a%20la%28s%29%2010.22.47-myhxSys564dhEKqWEDYIF3dnG6Q0I8.png",
-    alt: "Validador de zonas remotas",
-    label: "Zonas"
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-03-10%20a%20la%28s%29%2010.25.56-HWXYJU2H2tgDorG5hVGj8WbgyylYnw.png",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.30.56-XEh5z4XLT3hyvVsioeNOqa04edDv4U.png",
     alt: "Modulo de incidencias",
     label: "Incidencias"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Facturacion-sxWYQ2rghxCpLc1tJMYBxI1h24wKge.png",
+    alt: "Facturacion - Perfiles y facturas automaticas",
+    label: "Facturacion"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.31.13-BtkOAcDTv2qluSGYb6DiBAAt8Nyaar.png",
+    alt: "Mi Billetera y movimientos - Creditos y pagos",
+    label: "Billetera"
   }
 ]
 
@@ -52,6 +58,7 @@ export default function Hero() {
         <div className="absolute top-20 right-10 w-72 h-72 bg-[#0F7A7E]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-64 h-64 bg-[#59C5B3]/10 rounded-full blur-3xl" />
       </div>
+      <LogisticsAnimation />
 
       <div className="absolute top-4 right-4 z-30 hidden md:block">
         <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E] shadow-sm">
