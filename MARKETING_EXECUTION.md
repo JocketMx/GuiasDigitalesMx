@@ -340,7 +340,7 @@
 
 **Metrics to Track:**
 
-```
+\`\`\`
 Week 1 Performance:
 ├─ Traffic
 │  ├─ Organic: [#]
@@ -368,7 +368,7 @@ Week 1 Performance:
    ├─ Avg time on page: [#]
    ├─ Share rate: [#%]
    └─ Internal links clicked: [#]
-```
+\`\`\`
 
 ### Success Metrics (Month 1 Goal)
 

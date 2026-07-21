@@ -8,21 +8,21 @@ export default function V2FeaturesSection() {
     {
       icon: Mail,
       title: "Verificación de Email",
-      description: "Seguridad mejorada con validación de correo electronico en cada cuenta",
+      description: "Seguridad mejorada con validación de correo electrónico en cada cuenta",
     },
     {
       icon: MessageCircle,
       title: "Notificaciones WhatsApp",
-      description: "Avisos en tiempo real a tus clientes sobre el estado de sus envios",
+      description: "Avisos en tiempo real a tus clientes sobre el estado de sus envíos",
     },
     {
       icon: AlertTriangle,
-      title: "Modulo de Incidencias",
+      title: "Módulo de Incidencias",
       description: "Reporta y da seguimiento a problemas con paquetes de forma centralizada",
     },
     {
       icon: MessageSquare,
-      title: "Chat en Linea",
+      title: "Chat en Línea",
       description: "Soporte inmediato con nuestro equipo disponible 24/7",
     },
   ]
@@ -36,7 +36,7 @@ export default function V2FeaturesSection() {
             Las características que pediste
           </h2>
           <p className="text-lg text-[#0B0A16]/60 max-w-2xl mx-auto">
-            Hemos escuchado a nuestros clientes y construido una plataforma mas robusta, segura y conectada.
+            Hemos escuchado a nuestros clientes y construido una plataforma más robusta, segura y conectada.
           </p>
         </div>
 

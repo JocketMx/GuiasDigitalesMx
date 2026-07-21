@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MessageCircle, ArrowLeft, Code, Clock } from "lucide-react"
 import type { Metadata } from "next"
+import PluginShowcase from "@/components/plugin-showcase"
 
 export const metadata: Metadata = {
   title: "Documentación API | Guías Digitales MX",
@@ -68,13 +69,33 @@ export default function DocumentacionPage() {
           ))}
         </div>
 
+      </div>
+
+      {/* Plugin Showcase */}
+      <div className="w-full max-w-6xl mx-auto mt-20">
+        <div className="text-center mb-10 space-y-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-[#0F7A7E]/5 px-4 py-1.5 text-sm font-semibold text-[#0F7A7E]">
+            Plugins disponibles hoy
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0B0A16] tracking-tight text-balance">
+            Guías Digitales dentro de tu tienda
+          </h2>
+          <p className="text-[#0B0A16]/60 max-w-2xl mx-auto leading-relaxed">
+            Mientras publicamos la documentación completa de la API, ya puedes usar nuestros plugins oficiales para Shopify y WooCommerce. Así se ven funcionando.
+          </p>
+        </div>
+        <PluginShowcase />
+      </div>
+
+      <div className="max-w-2xl w-full text-center space-y-8 mt-20">
+
         {/* Divider */}
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-[#0F7A7E]/15" />
           </div>
           <div className="relative flex justify-center">
-            <span className="bg-white px-4 text-sm text-[#0B0A16]/40">Mientras tanto</span>
+            <span className="bg-white px-4 text-sm text-[#0B0A16]/40">¿Necesitas ayuda?</span>
           </div>
         </div>
 

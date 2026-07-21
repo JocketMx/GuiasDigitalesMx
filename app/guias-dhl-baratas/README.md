@@ -4,11 +4,11 @@
 Página optimizada para la keyword primaria **"guías DHL baratas"** con objetivo de capturar tráfico de intención comercial/transaccional desde Google.
 
 ## Estructura de Archivos
-```
+\`\`\`
 /app/guias-dhl-baratas/
 ├── page.tsx          # Componente principal de la página
 └── schema.tsx        # Schema JSON-LD para SEO
-```
+\`\`\`
 
 ## Características Implementadas
 
@@ -60,9 +60,9 @@ Página optimizada para la keyword primaria **"guías DHL baratas"** con objetiv
 Esta página está estructurada para ser fácilmente duplicada. Para crear una nueva página SEO:
 
 ### Paso 1: Copiar la carpeta
-```
+\`\`\`
 cp -r /app/guias-dhl-baratas /app/nueva-keyword
-```
+\`\`\`
 
 ### Paso 2: Actualizar variables en la nueva página
 - **URL**: Cambiar slug en `/app/[nueva-keyword]/page.tsx`
@@ -74,7 +74,7 @@ cp -r /app/guias-dhl-baratas /app/nueva-keyword
 
 ### Paso 3: Variables a reemplazar en `page.tsx`
 
-```typescript
+\`\`\`typescript
 // CAMBIAR ESTO:
 export const metadata: Metadata = {
   title: "Guías DHL baratas en México...", // NUEVO TITLE
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
   Guías DHL baratas  {/* CAMBIAR KEYWORD */}
   <span className="block text-[#0F7A7E]">en México para tu negocio</span>
 </h1>
-```
+\`\`\`
 
 ### Paso 4: Actualizar schema en `schema.tsx`
 - Cambiar nombre de la página
@@ -99,14 +99,14 @@ export const metadata: Metadata = {
 
 ### Paso 5: Actualizar sitemap
 Agregar nueva ruta en `/app/sitemap.ts`:
-```typescript
+\`\`\`typescript
 {
   url: `${baseUrl}/nueva-keyword`,
   lastModified: new Date(),
   changeFrequency: 'weekly',
   priority: 0.9,
 }
-```
+\`\`\`
 
 ## Ejemplos de Nuevas Páginas a Crear
 
