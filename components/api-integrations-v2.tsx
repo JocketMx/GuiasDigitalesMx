@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Code, Zap, CheckCircle } from "lucide-react"
@@ -9,13 +8,13 @@ export default function APIIntegrationsV2() {
   const integrations = [
     {
       name: "Shopify",
-      icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/public/images/shopify-integration-ecommerce.png",
+      iconUrl: "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/shopify/default.svg",
       description: "Integra directamente con tu tienda Shopify. Genera guías automáticamente desde tus órdenes.",
       features: ["Sincronización automática", "Gestión de inventario", "Etiquetas de envío", "Rastreo integrado"],
     },
     {
       name: "WordPress / WooCommerce",
-      icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/public/images/placeholder-logo.png",
+      iconUrl: "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/woocommerce/default.svg",
       description: "Plugin compatible con WooCommerce. Funciona en cualquier sitio WordPress con tienda online.",
       features: ["Configuración en minutos", "Sin código necesario", "Soporte 24/7", "Actualizaciones automáticas"],
     },
@@ -59,15 +58,12 @@ export default function APIIntegrationsV2() {
               className="group relative p-8 rounded-2xl border border-[#0F7A7E]/10 bg-white hover:border-[#0F7A7E]/30 hover:shadow-xl hover:shadow-[#0F7A7E]/10 transition-all duration-300"
             >
               <div className="flex items-start gap-6 mb-6">
-                <div className="h-16 w-16 rounded-xl bg-[#0F7A7E]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0F7A7E] transition-all">
-                  <div className="relative w-12 h-12">
-                    <Image
-                      src={integration.icon}
-                      alt={integration.name}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                <div className="h-16 w-16 rounded-xl bg-white border border-[#0F7A7E]/20 flex items-center justify-center flex-shrink-0 shadow-sm p-3">
+                  <img
+                    src={integration.iconUrl}
+                    alt={integration.name}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-[#0B0A16]">{integration.name}</h3>
@@ -84,11 +80,13 @@ export default function APIIntegrationsV2() {
                 ))}
               </ul>
 
-              <Button className="w-full bg-[#0F7A7E] hover:bg-[#0F7A7E]/90 text-white">
-                <Code className="h-4 w-4 mr-2" />
-                Ver Documentación
-                <ArrowRight className="h-4 w-4 ml-auto" />
-              </Button>
+              <Link href="/documentacion">
+                <Button className="w-full bg-[#0F7A7E] hover:bg-[#0F7A7E]/90 text-white">
+                  <Code className="h-4 w-4 mr-2" />
+                  Ver Documentación
+                  <ArrowRight className="h-4 w-4 ml-auto" />
+                </Button>
+              </Link>
             </div>
           ))}
         </div>

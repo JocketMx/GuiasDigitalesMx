@@ -79,9 +79,9 @@ export default function DashboardShowcaseV2() {
     billetera: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.31.13-BtkOAcDTv2qluSGYb6DiBAAt8Nyaar.png",
     recolecciones: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.29.39-BrL4Wei755DPBCQHHm4u2H4GLkADIv.png",
     incidencias: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.30.56-XEh5z4XLT3hyvVsioeNOqa04edDv4U.png",
-    facturacion: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.32.34-aPbvLhrphRfXnNtWWcKk3ogW0rA6lh.png",
+    facturacion: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Facturacion-sxWYQ2rghxCpLc1tJMYBxI1h24wKge.png",
     notificaciones: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-16%20at%2010.28.06-txrQAuLF6CVNipQcKyxeQFAX6kNks5.jpeg",
-    cotizaciones: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.26.09-uR5DERlblHUt8hY6QKClqvapuIVNKcv.png",
+    cotizaciones: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Cotizaciones-yJkZ4csHiXzQufG1Y9uOHTnOnvQXGs.png",
   }
 
   const current = descriptions[activeTab]

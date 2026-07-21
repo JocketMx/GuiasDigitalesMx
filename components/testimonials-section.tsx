@@ -24,10 +24,10 @@ const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    name: 'María González',
+    name: 'Alejandro Cortina',
     role: 'Gerente de Logística',
     company: 'Entre Perfumes',
-    avatar: '/mexican-professional-woman.png',
+    avatar: '/mexican-male-manager.png',
     content: 'La plataforma es increíblemente intuitiva. Nuestro equipo la domina en menos de una hora. El rastreo en tiempo real es exacto y confiable.',
     rating: 5,
   },
