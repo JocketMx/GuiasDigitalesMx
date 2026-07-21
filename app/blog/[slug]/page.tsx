@@ -9,7 +9,8 @@ type Props = {
 
 // Generar metadata dinámicamente
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getBlogPost(params.slug)
+  const { slug } = await params;
+  const post = getBlogPost(slug)
 
   if (!post) {
     return {
@@ -48,14 +49,15 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = getBlogPost(params.slug)
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getBlogPost(slug)
 
   if (!post) {
     notFound()
   }
 
-  const relatedPosts = getRelatedPosts(params.slug, 3)
+  const relatedPosts = getRelatedPosts(slug, 3)
 
   return <BlogPostPageClient post={post} relatedPosts={relatedPosts} />
 }
