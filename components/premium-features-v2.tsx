@@ -72,13 +72,14 @@ export default function PremiumFeaturesV2() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
             {/* WhatsApp card — spans 3 cols, includes real screenshot */}
             <div className="lg:col-span-3 relative group rounded-2xl border-2 border-[#25D366]/30 bg-gradient-to-br from-[#25D366]/10 to-[#25D366]/5 hover:border-[#25D366]/60 transition-all duration-300 hover:shadow-xl hover:shadow-[#25D366]/20 overflow-hidden">
+              {/* Badge — same position as Credits card */}
+              <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold z-10">
+                <Zap className="h-3 w-3" />
+                Destacado
+              </div>
               <div className="flex flex-col md:flex-row items-stretch gap-0">
                 {/* Text side */}
                 <div className="p-8 flex flex-col justify-center md:w-1/2">
-                  <div className="inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold self-start mb-4">
-                    <Zap className="h-3 w-3" />
-                    Destacado
-                  </div>
                   <div className="flex items-start gap-4 mb-4">
                     <div className="h-14 w-14 rounded-xl bg-[#25D366] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
                       <MessageCircle className="h-7 w-7" />
@@ -116,21 +117,64 @@ export default function PremiumFeaturesV2() {
               </div>
             </div>
 
-            {/* Credits card — spans 2 cols */}
-            <div className="lg:col-span-2 relative group p-8 rounded-2xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#F7A23B]/10 to-[#F7A23B]/5 hover:border-[#0F7A7E]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/20">
-              <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold">
+            {/* Credits card — spans 2 cols, with payment screenshot */}
+            <div className="lg:col-span-2 relative group rounded-2xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#F7A23B]/10 to-[#F7A23B]/5 hover:border-[#0F7A7E]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/20 overflow-hidden">
+              <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold z-10">
                 <Zap className="h-3 w-3" />
                 Destacado
               </div>
-              <div className="flex items-start gap-4">
-                <div className="h-14 w-14 rounded-xl bg-[#0F7A7E] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <CreditCard className="h-7 w-7" />
+              <div className="flex flex-col h-full">
+                {/* Text section */}
+                <div className="p-8 pb-4">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="h-14 w-14 rounded-xl bg-[#0F7A7E] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <CreditCard className="h-7 w-7" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-[#0B0A16] mb-2">Gestión de Créditos y TDC</h3>
+                      <p className="text-[#0B0A16]/70 leading-relaxed text-sm">
+                        Paga tus envíos con crédito flexible o con tarjeta. Gestiona tu línea de crédito, ve tu estado de cuenta y exporta en PDF.
+                      </p>
+                    </div>
+                  </div>
+                  {/* Payment methods */}
+                  <div className="mt-3">
+                    <p className="text-xs font-semibold text-[#0B0A16]/50 uppercase tracking-wider mb-2">Métodos de pago aceptados</p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {/* Visa */}
+                      <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
+                        <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visa/default.svg" alt="Visa" className="h-4 w-auto" />
+                      </div>
+                      {/* Mastercard */}
+                      <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
+                        <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/mastercard/default.svg" alt="Mastercard" className="h-4 w-auto" />
+                      </div>
+                      {/* Amex */}
+                      <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
+                        <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/american-express/default.svg" alt="American Express" className="h-4 w-auto" />
+                      </div>
+                      {/* Apple Pay */}
+                      <div className="h-7 bg-black rounded-md border border-black/10 px-2 flex items-center">
+                        <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/apple-pay/light.svg" alt="Apple Pay" className="h-3.5 w-auto" />
+                      </div>
+                      {/* Google Pay */}
+                      <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
+                        <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google-pay/default.svg" alt="Google Pay" className="h-4 w-auto" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-[#0B0A16] mb-2">Gestión de Créditos y TDC</h3>
-                  <p className="text-[#0B0A16]/70 leading-relaxed">
-                    Paga tus envíos con crédito flexible o directamente con tu tarjeta de crédito. Única en el mercado: gestiona tu línea de crédito, ve tu estado de cuenta y exporta en PDF.
-                  </p>
+                {/* Screenshot */}
+                <div className="flex-1 relative bg-[#F5F5F7] flex items-end justify-center pt-2 px-6 min-h-[200px]">
+                  <div className="relative w-full max-w-[220px] rounded-t-xl overflow-hidden shadow-xl border border-black/10 border-b-0">
+                    <Image
+                      src="/images/payment-tdc.png"
+                      alt="Pantalla de pago con tarjeta en Guías Digitales MX"
+                      width={572}
+                      height={1084}
+                      className="w-full h-auto"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
