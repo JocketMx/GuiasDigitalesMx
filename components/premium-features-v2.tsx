@@ -72,13 +72,13 @@ export default function PremiumFeaturesV2() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
             {/* WhatsApp card — spans 3 cols, includes real screenshot */}
             <div className="lg:col-span-3 relative group rounded-2xl border-2 border-[#25D366]/30 bg-gradient-to-br from-[#25D366]/10 to-[#25D366]/5 hover:border-[#25D366]/60 transition-all duration-300 hover:shadow-xl hover:shadow-[#25D366]/20 overflow-hidden">
-              <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold z-10">
-                <Zap className="h-3 w-3" />
-                Destacado
-              </div>
               <div className="flex flex-col md:flex-row items-stretch gap-0">
                 {/* Text side */}
                 <div className="p-8 flex flex-col justify-center md:w-1/2">
+                  <div className="inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold self-start mb-4">
+                    <Zap className="h-3 w-3" />
+                    Destacado
+                  </div>
                   <div className="flex items-start gap-4 mb-4">
                     <div className="h-14 w-14 rounded-xl bg-[#25D366] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
                       <MessageCircle className="h-7 w-7" />

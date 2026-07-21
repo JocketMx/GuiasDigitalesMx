@@ -145,7 +145,17 @@ export default function Hero() {
 
           {/* Right column - Screenshot Carousel */}
           <div className="relative hidden lg:block">
-            <div className="relative">
+            {/* v2.0 floating badge above carousel */}
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 rounded-full bg-[#0F7A7E] text-white px-5 py-2 shadow-lg shadow-[#0F7A7E]/30 whitespace-nowrap">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#59C5B3] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
+              </span>
+              <span className="text-sm font-bold tracking-wide">Dashboard v2.0 disponible</span>
+              <span className="rounded-full bg-[#F7A23B] px-2 py-0.5 text-[10px] font-black text-white uppercase tracking-wider">Nuevo</span>
+            </div>
+
+            <div className="relative mt-4">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#0F7A7E]/20 to-[#59C5B3]/20 rounded-2xl blur-xl" />
               
               {/* Screenshot carousel */}
@@ -229,6 +239,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
