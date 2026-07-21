@@ -70,14 +70,14 @@ export default function PremiumFeaturesV2() {
         <div className="grid gap-6 lg:gap-8">
           {/* Top row: WhatsApp (wide) + Credits (normal) */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-            {/* WhatsApp card — spans 3 cols, includes real screenshot */}
-            <div className="lg:col-span-3 relative group rounded-2xl border-2 border-[#25D366]/30 bg-gradient-to-br from-[#25D366]/10 to-[#25D366]/5 hover:border-[#25D366]/60 transition-all duration-300 hover:shadow-xl hover:shadow-[#25D366]/20 overflow-hidden">
-              {/* Badge — same position as Credits card */}
-              <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold z-10">
+            {/* WhatsApp card — spans 3 cols */}
+            <div className="lg:col-span-3 relative group rounded-2xl border-2 border-[#25D366]/30 bg-gradient-to-br from-[#25D366]/10 to-[#25D366]/5 hover:border-[#25D366]/60 transition-all duration-300 hover:shadow-xl hover:shadow-[#25D366]/20">
+              {/* Badge floats outside — no overflow-hidden on card */}
+              <div className="absolute -right-3 -top-3 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold shadow-md z-10">
                 <Zap className="h-3 w-3" />
                 Destacado
               </div>
-              <div className="flex flex-col md:flex-row items-stretch gap-0">
+              <div className="flex flex-col md:flex-row items-stretch gap-0 overflow-hidden rounded-2xl">
                 {/* Text side */}
                 <div className="p-8 flex flex-col justify-center md:w-1/2">
                   <div className="flex items-start gap-4 mb-4">
@@ -117,13 +117,14 @@ export default function PremiumFeaturesV2() {
               </div>
             </div>
 
-            {/* Credits card — spans 2 cols, with payment screenshot */}
-            <div className="lg:col-span-2 relative group rounded-2xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#F7A23B]/10 to-[#F7A23B]/5 hover:border-[#0F7A7E]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/20 overflow-hidden">
-              <div className="absolute -right-2 -top-2 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold z-10">
+            {/* Credits card — spans 2 cols */}
+            <div className="lg:col-span-2 relative group rounded-2xl border-2 border-[#0F7A7E]/20 bg-gradient-to-br from-[#F7A23B]/10 to-[#F7A23B]/5 hover:border-[#0F7A7E]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/20">
+              {/* Badge floats outside */}
+              <div className="absolute -right-3 -top-3 inline-flex items-center gap-1 rounded-full bg-[#F7A23B] text-white px-3 py-1 text-xs font-bold shadow-md z-10">
                 <Zap className="h-3 w-3" />
                 Destacado
               </div>
-              <div className="flex flex-col h-full">
+              <div className="flex flex-col h-full overflow-hidden rounded-2xl">
                 {/* Text section */}
                 <div className="p-8 pb-4">
                   <div className="flex items-start gap-4 mb-4">
@@ -137,27 +138,22 @@ export default function PremiumFeaturesV2() {
                       </p>
                     </div>
                   </div>
-                  {/* Payment methods */}
+                  {/* Payment logos row */}
                   <div className="mt-3">
                     <p className="text-xs font-semibold text-[#0B0A16]/50 uppercase tracking-wider mb-2">Métodos de pago aceptados</p>
                     <div className="flex items-center gap-2 flex-wrap">
-                      {/* Visa */}
                       <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
                         <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visa/default.svg" alt="Visa" className="h-4 w-auto" />
                       </div>
-                      {/* Mastercard */}
                       <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
                         <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/mastercard/default.svg" alt="Mastercard" className="h-4 w-auto" />
                       </div>
-                      {/* Amex */}
                       <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
                         <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/american-express/default.svg" alt="American Express" className="h-4 w-auto" />
                       </div>
-                      {/* Apple Pay */}
-                      <div className="h-7 bg-black rounded-md border border-black/10 px-2 flex items-center">
-                        <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/apple-pay/light.svg" alt="Apple Pay" className="h-3.5 w-auto" />
+                      <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
+                        <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/apple-pay/default.svg" alt="Apple Pay" className="h-4 w-auto" />
                       </div>
-                      {/* Google Pay */}
                       <div className="h-7 bg-white rounded-md border border-black/10 px-1.5 flex items-center">
                         <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google-pay/default.svg" alt="Google Pay" className="h-4 w-auto" />
                       </div>
@@ -176,6 +172,69 @@ export default function PremiumFeaturesV2() {
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Payment methods full-width section */}
+          <div className="rounded-2xl border border-[#0F7A7E]/15 bg-white px-8 py-7">
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-shrink-0">
+                <p className="text-xs font-semibold text-[#0B0A16]/50 uppercase tracking-wider mb-1">Pagos seguros con</p>
+                <h3 className="text-lg font-bold text-[#0B0A16]">Múltiples métodos de pago</h3>
+              </div>
+              <div className="h-px w-full md:h-12 md:w-px bg-[#0B0A16]/10 flex-shrink-0" />
+              <div className="flex flex-wrap items-center gap-3 flex-1">
+                {/* Visa */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="h-10 bg-white rounded-lg border border-black/10 px-3 flex items-center shadow-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visa/default.svg" alt="Visa" className="h-5 w-auto" />
+                  </div>
+                  <span className="text-[10px] text-[#0B0A16]/50 font-medium">Visa</span>
+                </div>
+                {/* Mastercard */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="h-10 bg-white rounded-lg border border-black/10 px-3 flex items-center shadow-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/mastercard/default.svg" alt="Mastercard" className="h-5 w-auto" />
+                  </div>
+                  <span className="text-[10px] text-[#0B0A16]/50 font-medium">Mastercard</span>
+                </div>
+                {/* Amex */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="h-10 bg-white rounded-lg border border-black/10 px-3 flex items-center shadow-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/american-express/default.svg" alt="American Express" className="h-5 w-auto" />
+                  </div>
+                  <span className="text-[10px] text-[#0B0A16]/50 font-medium">Amex</span>
+                </div>
+                {/* Apple Pay */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="h-10 bg-white rounded-lg border border-black/10 px-3 flex items-center shadow-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/apple-pay/default.svg" alt="Apple Pay" className="h-5 w-auto" />
+                  </div>
+                  <span className="text-[10px] text-[#0B0A16]/50 font-medium">Apple Pay</span>
+                </div>
+                {/* Google Pay */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="h-10 bg-white rounded-lg border border-black/10 px-3 flex items-center shadow-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google-pay/default.svg" alt="Google Pay" className="h-5 w-auto" />
+                  </div>
+                  <span className="text-[10px] text-[#0B0A16]/50 font-medium">Google Pay</span>
+                </div>
+                {/* SPEI */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="h-10 bg-white rounded-lg border border-black/10 px-3 flex items-center shadow-sm min-w-[56px] justify-center">
+                    <span className="text-sm font-black text-[#0F7A7E] tracking-tight">SPEI</span>
+                  </div>
+                  <span className="text-[10px] text-[#0B0A16]/50 font-medium">Transferencia</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0 bg-[#0F7A7E]/5 rounded-xl px-4 py-3">
+                <svg className="h-4 w-4 text-[#0F7A7E] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <p className="text-xs text-[#0B0A16]/60 leading-snug max-w-[160px]">
+                  Pagos procesados con <span className="font-semibold text-[#0B0A16]/80">cifrado SSL</span> de 256 bits
+                </p>
               </div>
             </div>
           </div>
