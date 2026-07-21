@@ -1,10 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { 
-  ArrowRight, TrendingDown, Zap, Clock, Shield, DollarSign, 
+import {
+  ArrowRight, TrendingDown, Zap, Clock, Shield, DollarSign,
   CheckCircle, MessageSquare, ShoppingCart, Truck, MapPin, Package,
   ChevronDown
 } from "lucide-react"
@@ -13,21 +12,6 @@ import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 import WhatsAppButton from "@/components/whatsapp-button"
 import GuiasDHLBaratasSchema from "./schema"
-
-export const metadata: Metadata = {
-  title: "Guías DHL baratas en México | Ahorra 60% | Guías Digitales MX",
-  description: "Compra guías DHL baratas en México. Cotiza, genera y entrega envíos en minutos con la plataforma más fácil y segura para emprendedores y tiendas en línea.",
-  keywords: "guías DHL baratas, guías prepagadas DHL, envíos baratos México, guías para envíos, cotizar envío DHL barato",
-  openGraph: {
-    title: "Guías DHL baratas en México | Ahorra 60%",
-    description: "Genera guías DHL baratas desde $80 + IVA. Plataforma 100% mexicana para emprendedores, ecommerce y negocios.",
-    type: "website",
-    url: "https://guiasdigitales.mx/guias-dhl-baratas",
-  },
-  alternates: {
-    canonical: "https://guiasdigitales.mx/guias-dhl-baratas",
-  },
-}
 
 // FAQ Component
 function FAQSection() {
@@ -104,9 +88,8 @@ function FAQSection() {
                 >
                   <h3 className="font-semibold text-[#0B0A16] text-lg">{item.question}</h3>
                   <ChevronDown
-                    className={`h-5 w-5 text-[#0F7A7E] flex-shrink-0 transition-transform ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`}
+                    className={`h-5 w-5 text-[#0F7A7E] flex-shrink-0 transition-transform ${openIndex === index ? 'rotate-180' : ''
+                      }`}
                   />
                 </button>
 

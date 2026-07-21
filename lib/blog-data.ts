@@ -188,7 +188,7 @@ R: Sí. Shopify, WooCommerce y API REST disponibles. Nuestro equipo maneja la in
 **P: ¿Qué pasa con mis datos existentes?**
 R: Migración automática sin perder información. Tu historial completo se mantiene.
 `,
-    date: "21 de Julio, 2026",
+    date: "2026-07-21",
     readTime: "10 min",
     category: "Anuncios",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.25.13-1Weeu0HQrEGhGaI0evVHWGCzwR400v.png",
@@ -302,7 +302,7 @@ Las notificaciones WhatsApp son la clave para convertir compradores ocasionales 
 
 ¿Listo para revolucionar tu logística?
 `,
-    date: "21 de Julio, 2026",
+    date: "2026-07-21",
     readTime: "6 min",
     category: "Características",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-16%20at%2010.28.06-txrQAuLF6CVNipQcKyxeQFAX6kNks5.jpeg",
@@ -490,7 +490,7 @@ Mientras otros siguen cobrando por adelantado sin ofrecer opciones, nosotros ent
 
 [Solicitar Crédito] [Ver Planes] [Contactar Asesor]
 `,
-    date: "21 de Julio, 2026",
+    date: "2026-07-21",
     readTime: "8 min",
     category: "Finanzas",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.31.13-BtkOAcDTv2qluSGYb6DiBAAt8Nyaar.png",
@@ -742,7 +742,7 @@ Nuestros plugins Shopify y WordPress están listos hoy. Otros sitios necesitan A
 
 [Ver Plugin Shopify] [Ver Plugin WordPress] [Agendar Demo]
 `,
-    date: "21 de Julio, 2026",
+    date: "2026-07-21",
     readTime: "9 min",
     category: "Integraciones",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.25.13-1Weeu0HQrEGhGaI0evVHWGCzwR400v.png",
@@ -1009,7 +1009,7 @@ Con Guías Digitales v2.0, ese proceso que antes tomaba horas ahora toma **1 cli
 
 [Acceder a Facturación] [Ver Cómo Funciona] [Contactar Contador]
 `,
-    date: "21 de Julio, 2026",
+    date: "2026-07-21",
     readTime: "7 min",
     category: "Finanzas",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.32.34-aPbvLhrphRfXnNtWWcKk3ogW0rA6lh.png",
