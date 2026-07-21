@@ -64,13 +64,18 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E] shadow-sm">
           <span className="text-lg">🇲🇽</span>
           <span className="font-medium">Empresa 100% Mexicana, orgullosamente Tapatía</span>
-          {/* Jalisco flag — bicolor: left blue, right gold, coat of arms centered */}
-          <svg width="18" height="12" viewBox="0 0 18 12" className="rounded-[2px] flex-shrink-0 shadow-sm" aria-label="Bandera de Jalisco">
-            <rect x="0" y="0" width="9"  height="12" fill="#003DA5" />
-            <rect x="9" y="0" width="9"  height="12" fill="#F5C518" />
-            {/* Simplified coat of arms: white shield outline centered on the seam */}
-            <rect x="7" y="2.5" width="4" height="5" rx="0.8" fill="none" stroke="white" strokeWidth="0.8" opacity="0.9" />
-            <line x1="9" y1="2.5" x2="9" y2="7.5" stroke="white" strokeWidth="0.5" opacity="0.7" />
+          {/* Jalisco flag — bicolor left blue / right gold, simplified coat of arms */}
+          <svg width="20" height="13" viewBox="0 0 20 13" className="rounded-[2px] flex-shrink-0 shadow-sm border border-black/10" aria-label="Bandera de Jalisco">
+            <rect x="0" y="0" width="10" height="13" fill="#1A3A8F" />
+            <rect x="10" y="0" width="10" height="13" fill="#F5C12E" />
+            {/* Shield — pointed bottom, centered on seam */}
+            <path d="M7.5 3.5 L12.5 3.5 L12.5 8 Q10 10 7.5 8 Z" fill="none" stroke="white" strokeWidth="0.7" opacity="0.9" />
+            {/* Helmet top */}
+            <ellipse cx="10" cy="3.2" rx="1.8" ry="1.2" fill="white" opacity="0.5" />
+            {/* Centre shield divide */}
+            <line x1="10" y1="3.5" x2="10" y2="8.5" stroke="white" strokeWidth="0.5" opacity="0.5" />
+            {/* Pennant */}
+            <path d="M10 2 L12 1 L10 2.2 Z" fill="#C0392B" opacity="0.85" />
           </svg>
         </div>
       </div>
@@ -256,12 +261,14 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E]">
             <span className="text-lg">🇲🇽</span>
             <span>100% Mexicana, orgullosamente Tapatía</span>
-            {/* Jalisco flag — bicolor: left blue, right gold, coat of arms centered */}
-            <svg width="18" height="12" viewBox="0 0 18 12" className="rounded-[2px] flex-shrink-0 shadow-sm" aria-label="Bandera de Jalisco">
-              <rect x="0" y="0" width="9"  height="12" fill="#003DA5" />
-              <rect x="9" y="0" width="9"  height="12" fill="#F5C518" />
-              <rect x="7" y="2.5" width="4" height="5" rx="0.8" fill="none" stroke="white" strokeWidth="0.8" opacity="0.9" />
-              <line x1="9" y1="2.5" x2="9" y2="7.5" stroke="white" strokeWidth="0.5" opacity="0.7" />
+            {/* Jalisco flag — bicolor left blue / right gold, simplified coat of arms */}
+            <svg width="20" height="13" viewBox="0 0 20 13" className="rounded-[2px] flex-shrink-0 shadow-sm border border-black/10" aria-label="Bandera de Jalisco">
+              <rect x="0" y="0" width="10" height="13" fill="#1A3A8F" />
+              <rect x="10" y="0" width="10" height="13" fill="#F5C12E" />
+              <path d="M7.5 3.5 L12.5 3.5 L12.5 8 Q10 10 7.5 8 Z" fill="none" stroke="white" strokeWidth="0.7" opacity="0.9" />
+              <ellipse cx="10" cy="3.2" rx="1.8" ry="1.2" fill="white" opacity="0.5" />
+              <line x1="10" y1="3.5" x2="10" y2="8.5" stroke="white" strokeWidth="0.5" opacity="0.5" />
+              <path d="M10 2 L12 1 L10 2.2 Z" fill="#C0392B" opacity="0.85" />
             </svg>
           </div>
         </div>
