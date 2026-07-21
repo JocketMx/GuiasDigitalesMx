@@ -5,17 +5,17 @@ import { OrganizationSchema, LocalBusinessSchema } from "@/lib/schema-components
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://guiasdigitales.mx"),
-  title: "Guías Digitales MX - La Plataforma Completa de Envíos",
+  title: "Guías Digitales v2.0 - Notificaciones WhatsApp + Gestión de Créditos | Envíos Baratos México",
   description:
-    "Plataforma 24/7 para cotizar, comparar y crear guías de envío. Ahorra hasta 60% con crédito, notificaciones automáticas, facturación y API.",
-  keywords: "logística, envíos, paquetería, guías digitales, GDMX, México, e-commerce, shipping, API, facturación, crédito",
+    "Plataforma de envíos v2.0 con notificaciones WhatsApp en tiempo real, gestión de créditos con TDC, incidencias, facturación automática y plugins Shopify/WordPress. Ahorra 60% en envíos.",
+  keywords: "guías digitales v2.0, notificaciones whatsapp envios, gestión créditos paquetería, plataforma envios mexico, integraciones shopify woocommerce, logística, paquetería, envíos baratos",
   authors: [{ name: "GDMX Logistics" }],
   alternates: {
     canonical: "https://guiasdigitales.mx",
   },
   openGraph: {
-    title: "Guías Digitales MX - La Plataforma Completa de Envíos",
-    description: "Ahorra hasta 60% en envíos. Crédito, notificaciones automáticas, facturación en línea y API para tu negocio.",
+    title: "Guías Digitales v2.0 - Notificaciones WhatsApp + Créditos con TDC",
+    description: "La plataforma de envíos más completa de México. Notificaciones WhatsApp en tiempo real, créditos con TDC, facturación automática, plugins Shopify/WordPress. Ahorra 60%.",
     siteName: "Guías Digitales MX",
     url: "https://guiasdigitales.mx",
     images: [{ url: "/opengraph-image.png" }],
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guías Digitales MX - La Plataforma Completa de Envíos",
-    description: "Ahorra hasta 60% en envíos. Crédito, notificaciones automáticas, facturación en línea y API para tu negocio.",
+    title: "Guías Digitales v2.0 - Notificaciones WhatsApp + Créditos con TDC",
+    description: "Notificaciones WhatsApp en tiempo real, gestión de créditos con TDC, facturación automática. La plataforma de envíos más robusta de México.",
     images: ["/opengraph-image.png"],
   },
   icons: {
