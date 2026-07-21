@@ -23,14 +23,13 @@ export const blogPosts: BlogPost[] = [
     title: "Guías Digitales v2.0: Notificaciones WhatsApp + Gestión de Créditos",
     excerpt:
       "La plataforma más robusta y completa ahora disponible. Notificaciones WhatsApp en tiempo real, gestión de créditos con TDC, facturación automática, incidencias y mucho más.",
-    content: `
-# Guías Digitales v2.0: Una Revolución en Logística Digital
+    content: `# Guías Digitales v2.0: Una Revolución en Logística Digital
 
 Hoy anunciamos el lanzamiento de **Guías Digitales v2.0**, la plataforma de envíos más completa y robusta de México. Después de meses de desarrollo y feedback de nuestros clientes, traemos características innovadoras que transformarán la forma en que gestionas tus envíos.
 
-## ✨ Lo Más Destacado: Notificaciones WhatsApp y Gestión de Créditos
+## Lo Más Destacado: Notificaciones WhatsApp y Gestión de Créditos
 
-### 🔔 Notificaciones WhatsApp en Tiempo Real - Característica Revolucionaria
+### Notificaciones WhatsApp en Tiempo Real - Característica Revolucionaria
 
 Una de nuestras innovaciones más importantes: **tus clientes reciben avisos automáticos en WhatsApp en cada etapa del envío**. 
 
@@ -41,15 +40,15 @@ Una de nuestras innovaciones más importantes: **tus clientes reciben avisos aut
 - Disminuye los rechazos por falta de información
 
 **Estados cubiertos:**
-- ✅ Envío creado
-- 📦 Paquete recolectado
-- 🚚 En tránsito
-- ✔️ Entregado
-- ⚠️ Problema o incidencia
+- Envío creado
+- Paquete recolectado
+- En tránsito
+- Entregado
+- Problema o incidencia
 
 Esta es una característica que **ninguna otra plataforma ofrece con esta precisión y automatización**.
 
-### 💳 Gestión de Créditos y Pagos con Tarjeta de Crédito - Único en el Mercado
+### Gestión de Créditos y Pagos con Tarjeta de Crédito - Único en el Mercado
 
 Hemos revolucionado la forma de pagar envíos:
 
@@ -61,9 +60,9 @@ Hemos revolucionado la forma de pagar envíos:
 
 **Ventaja competitiva**: Somos la única plataforma en México que permite este nivel de flexibilidad en pagos.
 
-## 🎯 Nuevas Características Principales
+## Nuevas Características Principales
 
-### 📋 Módulo de Incidencias Completo
+### Módulo de Incidencias Completo
 
 Gestiona problemas de forma centralizada:
 - Crear incidencias en segundos
@@ -72,14 +71,14 @@ Gestiona problemas de forma centralizada:
 - Historial de acciones tomadas
 - Resolución rápida con soporte dedicado
 
-### 🔐 Verificación de Email
+### Verificación de Email
 
 Mayor seguridad en tu cuenta:
 - Validación obligatoria de correo
 - Protección de datos de clientes
 - Acceso seguro a tu billetera
 
-### 📊 Métricas Inteligentes Mejoradas
+### Métricas Inteligentes Mejoradas
 
 Dashboard rediseñado con:
 - Guías generadas, enviadas, entregadas
