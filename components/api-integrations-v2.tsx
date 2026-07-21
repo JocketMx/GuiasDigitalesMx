@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Code, Zap, CheckCircle } from "lucide-react"
+import PluginShowcase from "@/components/plugin-showcase"
 
 export default function APIIntegrationsV2() {
   const integrations = [
@@ -89,6 +90,27 @@ export default function APIIntegrationsV2() {
               </Link>
             </div>
           ))}
+        </div>
+
+        {/* Plugin Showcase */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#0B0A16] mb-3">
+              Míralo funcionando en tu tienda
+            </h3>
+            <p className="text-[#0B0A16]/60 max-w-2xl mx-auto">
+              Genera y administra tus guías directamente desde Shopify o WooCommerce, sin salir del panel de tu tienda.
+            </p>
+          </div>
+          <PluginShowcase />
+          <div className="mt-8 text-center">
+            <Link href="/documentacion">
+              <Button variant="outline" className="border-[#0F7A7E]/30 text-[#0F7A7E] hover:bg-[#0F7A7E]/5 bg-transparent">
+                Ver guía completa de instalación
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Benefits */}

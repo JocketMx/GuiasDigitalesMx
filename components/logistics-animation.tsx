@@ -1,86 +1,51 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-
 export default function LogisticsAnimation() {
-  const planeRef = useRef<HTMLDivElement>(null)
-
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Flying plane trail */}
-      <div
-        ref={planeRef}
-        className="absolute"
-        style={{
-          animation: "flyAcross 18s linear infinite",
-          top: "18%",
-        }}
-      >
-        {/* Plane SVG */}
-        <div className="relative flex items-center gap-1">
-          {/* Trail dots */}
-          <span className="block h-1 w-1 rounded-full bg-[#0F7A7E]/20" style={{ animation: "fadeTrail 18s linear infinite 0.6s" }} />
-          <span className="block h-1.5 w-1.5 rounded-full bg-[#0F7A7E]/30" style={{ animation: "fadeTrail 18s linear infinite 0.3s" }} />
-          <span className="block h-2 w-2 rounded-full bg-[#0F7A7E]/40" style={{ animation: "fadeTrail 18s linear infinite 0.1s" }} />
-          {/* Plane icon */}
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            className="text-[#0F7A7E] drop-shadow-sm"
-          >
-            <path
-              d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
-
-      {/* Second plane — smaller, lower, slower */}
+      {/* Delivery truck — travels across the hero above feature pills */}
       <div
         className="absolute"
         style={{
-          animation: "flyAcross 28s linear infinite 9s",
-          top: "72%",
-          opacity: 0.5,
+          animation: "driveAcross 22s linear infinite",
+          top: "7.8%",
         }}
       >
-        <div className="relative flex items-center gap-1">
-          <span className="block h-1 w-1 rounded-full bg-[#59C5B3]/25" />
-          <span className="block h-1.5 w-1.5 rounded-full bg-[#59C5B3]/35" />
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            className="text-[#59C5B3]"
-          >
-            <path
-              d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+        <div className="relative flex items-center gap-0.5">
+          {/* Road dust trail */}
+          <span className="block h-1 w-6 rounded-full bg-[#0F7A7E]/15" style={{ animation: "dustFade 22s linear infinite 0.4s" }} />
+          <span className="block h-1.5 w-3 rounded-full bg-[#0F7A7E]/20" style={{ animation: "dustFade 22s linear infinite 0.2s" }} />
+          <span className="block h-2 w-2 rounded-full bg-[#0F7A7E]/25" style={{ animation: "dustFade 22s linear infinite 0.1s" }} />
+          {/* Truck SVG */}
+          <svg width="44" height="28" viewBox="0 0 44 28" fill="none" className="text-[#0F7A7E] drop-shadow-sm">
+            {/* Truck body */}
+            <rect x="0" y="6" width="28" height="16" rx="2" fill="currentColor" opacity="0.18" />
+            <rect x="0" y="6" width="28" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
+            {/* Cab */}
+            <path d="M28 10 L28 22 L40 22 L40 14 L36 10 Z" fill="currentColor" opacity="0.25" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+            {/* Cab window */}
+            <path d="M30 12 L30 18 L38 18 L38 14 L35 12 Z" fill="white" opacity="0.7" />
+            {/* Wheels */}
+            <circle cx="8" cy="23" r="4" fill="white" stroke="currentColor" strokeWidth="1.5" />
+            <circle cx="8" cy="23" r="1.5" fill="currentColor" opacity="0.4" />
+            <circle cx="22" cy="23" r="4" fill="white" stroke="currentColor" strokeWidth="1.5" />
+            <circle cx="22" cy="23" r="1.5" fill="currentColor" opacity="0.4" />
+            <circle cx="36" cy="23" r="4" fill="white" stroke="currentColor" strokeWidth="1.5" />
+            <circle cx="36" cy="23" r="1.5" fill="currentColor" opacity="0.4" />
           </svg>
         </div>
       </div>
 
       <style>{`
-        @keyframes flyAcross {
+        @keyframes driveAcross {
           0%   { transform: translateX(-80px); opacity: 0; }
-          5%   { opacity: 1; }
-          90%  { opacity: 1; }
+          4%   { opacity: 1; }
+          92%  { opacity: 1; }
           100% { transform: translateX(110vw); opacity: 0; }
         }
-        @keyframes fadeTrail {
+        @keyframes dustFade {
           0%, 100% { opacity: 0; }
-          5%, 90%  { opacity: 1; }
+          4%, 92%  { opacity: 1; }
         }
       `}</style>
     </div>
