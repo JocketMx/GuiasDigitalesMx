@@ -64,14 +64,13 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E] shadow-sm">
           <span className="text-lg">🇲🇽</span>
           <span className="font-medium">Empresa 100% Mexicana, orgullosamente Tapatía</span>
-          {/* Jalisco flag — vertical tricolor: blue / white / blue with coat of arms dot */}
+          {/* Jalisco flag — bicolor: left blue, right gold, coat of arms centered */}
           <svg width="18" height="12" viewBox="0 0 18 12" className="rounded-[2px] flex-shrink-0 shadow-sm" aria-label="Bandera de Jalisco">
-            <rect x="0"  y="0" width="6"  height="12" fill="#003DA5" />
-            <rect x="6"  y="0" width="6"  height="12" fill="#FFFFFF" />
-            <rect x="12" y="0" width="6"  height="12" fill="#003DA5" />
-            {/* Simplified coat of arms: small golden sun in the center white stripe */}
-            <circle cx="9" cy="6" r="2" fill="#F7A23B" opacity="0.9" />
-            <circle cx="9" cy="6" r="1" fill="#FFFFFF" opacity="0.8" />
+            <rect x="0" y="0" width="9"  height="12" fill="#003DA5" />
+            <rect x="9" y="0" width="9"  height="12" fill="#F5C518" />
+            {/* Simplified coat of arms: white shield outline centered on the seam */}
+            <rect x="7" y="2.5" width="4" height="5" rx="0.8" fill="none" stroke="white" strokeWidth="0.8" opacity="0.9" />
+            <line x1="9" y1="2.5" x2="9" y2="7.5" stroke="white" strokeWidth="0.5" opacity="0.7" />
           </svg>
         </div>
       </div>
@@ -257,12 +256,12 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E]">
             <span className="text-lg">🇲🇽</span>
             <span>100% Mexicana, orgullosamente Tapatía</span>
+            {/* Jalisco flag — bicolor: left blue, right gold, coat of arms centered */}
             <svg width="18" height="12" viewBox="0 0 18 12" className="rounded-[2px] flex-shrink-0 shadow-sm" aria-label="Bandera de Jalisco">
-              <rect x="0"  y="0" width="6"  height="12" fill="#003DA5" />
-              <rect x="6"  y="0" width="6"  height="12" fill="#FFFFFF" />
-              <rect x="12" y="0" width="6"  height="12" fill="#003DA5" />
-              <circle cx="9" cy="6" r="2" fill="#F7A23B" opacity="0.9" />
-              <circle cx="9" cy="6" r="1" fill="#FFFFFF" opacity="0.8" />
+              <rect x="0" y="0" width="9"  height="12" fill="#003DA5" />
+              <rect x="9" y="0" width="9"  height="12" fill="#F5C518" />
+              <rect x="7" y="2.5" width="4" height="5" rx="0.8" fill="none" stroke="white" strokeWidth="0.8" opacity="0.9" />
+              <line x1="9" y1="2.5" x2="9" y2="7.5" stroke="white" strokeWidth="0.5" opacity="0.7" />
             </svg>
           </div>
         </div>

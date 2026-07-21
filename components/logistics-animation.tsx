@@ -8,7 +8,7 @@ export default function LogisticsAnimation() {
         className="absolute"
         style={{
           animation: "driveAcross 22s linear infinite",
-          top: "11%",
+          top: "6%",
         }}
       >
         <div className="relative flex items-center gap-0.5">
