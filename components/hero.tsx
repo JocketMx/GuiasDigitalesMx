@@ -151,6 +151,42 @@ export default function Hero() {
                 className="h-8 w-auto"
               />
             </div>
+
+            {/* Truck mini-bubble — left circle area */}
+            <div className="flex justify-center lg:justify-start pt-2">
+              <a
+                href="https://dashboard.guiasdigitales.mx"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Accede al dashboard"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-[#0F7A7E]/20 bg-white/70 backdrop-blur-sm px-3 py-1.5 shadow-sm hover:border-[#0F7A7E]/45 hover:shadow-md hover:bg-white transition-all duration-300"
+              >
+                {/* Tiny truck bubble */}
+                <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#0F7A7E] flex-shrink-0">
+                  <span className="absolute inset-0 rounded-full bg-[#0F7A7E] opacity-0 group-hover:opacity-30 group-hover:scale-150 transition-all duration-500" />
+                  <svg width="14" height="9" viewBox="0 0 44 28" fill="none" aria-hidden="true" style={{ animation: "miniTruckBounce 2.5s ease-in-out infinite" }}>
+                    <rect x="0" y="4" width="26" height="15" rx="2" fill="white" opacity="0.3" />
+                    <rect x="0" y="4" width="26" height="15" rx="2" stroke="white" strokeWidth="2" />
+                    <path d="M26 8 L26 19 L38 19 L38 13 L34 8 Z" fill="white" opacity="0.35" stroke="white" strokeWidth="2" strokeLinejoin="round" />
+                    <path d="M28 10 L28 16 L36 16 L36 13 L33 10 Z" fill="white" opacity="0.65" />
+                    <circle cx="8" cy="22" r="3.5" fill="white" opacity="0.9" />
+                    <circle cx="20" cy="22" r="3.5" fill="white" opacity="0.9" />
+                    <circle cx="33" cy="22" r="3.5" fill="white" opacity="0.9" />
+                  </svg>
+                </span>
+                <span className="text-xs font-medium text-[#0B0A16]/60 group-hover:text-[#0F7A7E] transition-colors">Tu guía lista en 1 minuto</span>
+                <svg className="h-3 w-3 text-[#0F7A7E]/40 group-hover:text-[#0F7A7E] group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
+
+            <style>{`
+              @keyframes miniTruckBounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-1.5px); }
+              }
+            `}</style>
           </div>
 
           {/* Right column - Screenshot Carousel */}
@@ -223,6 +259,34 @@ export default function Hero() {
                     </button>
                   ))}
                 </div>
+              </div>
+
+              {/* Truck mini-bubble — right circle area, below carousel */}
+              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 z-20">
+                <a
+                  href="https://dashboard.guiasdigitales.mx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ir al dashboard"
+                  className="group inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/25 bg-white/90 backdrop-blur-sm px-4 py-2 shadow-lg hover:border-[#0F7A7E]/50 hover:shadow-xl transition-all duration-300"
+                >
+                  <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-[#0F7A7E] flex-shrink-0 shadow-sm">
+                    <span className="absolute inset-0 rounded-full bg-[#0F7A7E] opacity-0 group-hover:opacity-25 group-hover:scale-[1.8] transition-all duration-500" />
+                    <svg width="16" height="10" viewBox="0 0 44 28" fill="none" aria-hidden="true" style={{ animation: "miniTruckBounce 2.5s ease-in-out infinite 0.3s" }}>
+                      <rect x="0" y="4" width="26" height="15" rx="2" fill="white" opacity="0.3" />
+                      <rect x="0" y="4" width="26" height="15" rx="2" stroke="white" strokeWidth="2" />
+                      <path d="M26 8 L26 19 L38 19 L38 13 L34 8 Z" fill="white" opacity="0.35" stroke="white" strokeWidth="2" strokeLinejoin="round" />
+                      <path d="M28 10 L28 16 L36 16 L36 13 L33 10 Z" fill="white" opacity="0.65" />
+                      <circle cx="8" cy="22" r="3.5" fill="white" opacity="0.9" />
+                      <circle cx="20" cy="22" r="3.5" fill="white" opacity="0.9" />
+                      <circle cx="33" cy="22" r="3.5" fill="white" opacity="0.9" />
+                    </svg>
+                  </span>
+                  <span className="text-xs font-semibold text-[#0F7A7E]">Abrir Dashboard</span>
+                  <svg className="h-3 w-3 text-[#0F7A7E]/50 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
               </div>
 
               {/* Floating stats cards */}
