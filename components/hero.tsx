@@ -163,36 +163,40 @@ export default function Hero() {
                   height={80}
                   className="h-8 w-auto"
                 />
-              </div>
 
-              {/* Compact printer bubble — guia label, right of logos */}
-              <a
-                href="https://dashboard.guiasdigitales.mx"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Genera tu guía prepagada en 1 minuto"
-                className="group inline-flex items-center gap-2 rounded-xl border border-[#0F7A7E]/25 bg-white/80 backdrop-blur-sm px-3 py-2 shadow-sm hover:border-[#0F7A7E]/50 hover:shadow-md hover:bg-white transition-all duration-300"
-              >
-                {/* Printer icon bubble */}
-                <span className="relative flex h-7 w-7 items-center justify-center rounded-lg bg-[#0F7A7E] flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                  <span className="absolute inset-0 rounded-lg bg-[#0F7A7E] opacity-0 group-hover:opacity-20 group-hover:scale-125 transition-all duration-500" />
-                  {/* Printer icon SVG */}
-                  <svg width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true">
-                    {/* Printer body */}
-                    <rect x="1" y="3" width="14" height="9" rx="1.5" fill="white" opacity="0.2" stroke="white" strokeWidth="1" />
-                    {/* Printer top plate */}
-                    <rect x="2" y="1.5" width="12" height="2.5" rx="1" fill="white" opacity="0.3" stroke="white" strokeWidth="0.8" />
-                    {/* Paper slot */}
-                    <rect x="3.5" y="2" width="9" height="1.2" fill="white" opacity="0.15" />
-                    {/* Paper output */}
-                    <line x1="4" y1="12" x2="12" y2="12" stroke="white" strokeWidth="0.8" opacity="0.7" />
-                    <line x1="4" y1="12.5" x2="12" y2="12.5" stroke="white" strokeWidth="0.6" opacity="0.5" />
-                    {/* LED indicator */}
-                    <circle cx="13.5" cy="5" r="0.7" fill="white" opacity="0.8" />
+                {/* Expanded guide bubble — between buttons, larger */}
+                <a
+                  href="https://dashboard.guiasdigitales.mx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Genera tu guía ahora en segundos"
+                  className="group inline-flex items-center gap-3 rounded-xl border border-[#0F7A7E]/30 bg-white/85 backdrop-blur-sm px-4 py-2.5 shadow-md hover:border-[#0F7A7E]/60 hover:shadow-lg hover:bg-white transition-all duration-300 ml-2"
+                >
+                  {/* Document/guide icon bubble */}
+                  <span className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F7A7E] flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                    <span className="absolute inset-0 rounded-lg bg-[#0F7A7E] opacity-0 group-hover:opacity-20 group-hover:scale-130 transition-all duration-500" />
+                    {/* Document with checkmark icon SVG */}
+                    <svg width="18" height="18" viewBox="0 0 20 24" fill="none" aria-hidden="true">
+                      {/* Document body */}
+                      <rect x="2" y="2" width="14" height="20" rx="2" fill="white" opacity="0.18" stroke="white" strokeWidth="1.2" />
+                      {/* Fold corner */}
+                      <path d="M14 2 L18 6 L14 6 Z" fill="white" opacity="0.35" stroke="white" strokeWidth="0.7" />
+                      {/* Checkmark inside */}
+                      <path d="M6 12 L8.5 14.5 L14 9" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
+                      {/* Decorative lines */}
+                      <line x1="4" y1="4" x2="12" y2="4" stroke="white" strokeWidth="0.7" opacity="0.5" />
+                      <line x1="4" y1="18" x2="12" y2="18" stroke="white" strokeWidth="0.7" opacity="0.5" />
+                    </svg>
+                  </span>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-sm font-semibold text-[#0F7A7E] leading-tight">Genera tu guía ahora</span>
+                    <span className="text-xs text-[#0B0A16]/45">1 minuto, lista para imprimir</span>
+                  </div>
+                  <svg className="h-4 w-4 text-[#0F7A7E]/40 group-hover:text-[#0F7A7E] group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </span>
-                <span className="text-xs font-semibold text-[#0F7A7E]">Lista para imprimir</span>
-              </a>
+                </a>
+              </div>
             </div>
 
             <style>{`
@@ -205,42 +209,40 @@ export default function Hero() {
 
           {/* Right column - Screenshot Carousel */}
           <div className="relative hidden lg:block">
-            {/* v2.0 floating badge above carousel + "Abrir Dashboard" bubble */}
-            <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2">
-              <div className="flex items-center gap-2 rounded-full bg-[#0F7A7E] text-white px-5 py-2 shadow-lg shadow-[#0F7A7E]/30 whitespace-nowrap">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#59C5B3] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
-                </span>
-                <span className="text-sm font-bold tracking-wide">Dashboard v2.0 disponible</span>
-                <span className="rounded-full bg-[#F7A23B] px-2 py-0.5 text-[10px] font-black text-white uppercase tracking-wider">Nuevo</span>
-              </div>
-              
-              {/* Abrir Dashboard bubble — centered above carousel */}
-              <a
-                href="https://dashboard.guiasdigitales.mx"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ir al dashboard"
-                className="group inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/30 bg-white/90 backdrop-blur-sm px-4 py-2 shadow-md hover:border-[#0F7A7E]/60 hover:shadow-lg transition-all duration-300"
-              >
-                <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#0F7A7E] flex-shrink-0 shadow-sm">
-                  <span className="absolute inset-0 rounded-full bg-[#0F7A7E] opacity-0 group-hover:opacity-25 group-hover:scale-[1.8] transition-all duration-500" />
-                  <svg width="14" height="9" viewBox="0 0 44 28" fill="none" aria-hidden="true" style={{ animation: "miniTruckBounce 2.5s ease-in-out infinite" }}>
-                    <rect x="0" y="4" width="26" height="15" rx="2" fill="white" opacity="0.3" />
-                    <rect x="0" y="4" width="26" height="15" rx="2" stroke="white" strokeWidth="2" />
-                    <path d="M26 8 L26 19 L38 19 L38 13 L34 8 Z" fill="white" opacity="0.35" stroke="white" strokeWidth="2" strokeLinejoin="round" />
-                    <path d="M28 10 L28 16 L36 16 L36 13 L33 10 Z" fill="white" opacity="0.65" />
-                    <circle cx="8" cy="22" r="3.5" fill="white" opacity="0.9" />
-                    <circle cx="20" cy="22" r="3.5" fill="white" opacity="0.9" />
-                    <circle cx="33" cy="22" r="3.5" fill="white" opacity="0.9" />
-                  </svg>
-                </span>
-                <span className="text-xs font-semibold text-[#0F7A7E]">Abrir Dashboard</span>
-                <svg className="h-3 w-3 text-[#0F7A7E]/50 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            {/* "Abrir Dashboard" truck bubble ABOVE v2.0 badge */}
+            <a
+              href="https://dashboard.guiasdigitales.mx"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ir al dashboard"
+              className="absolute -top-24 left-1/2 -translate-x-1/2 z-40 group inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/30 bg-white/90 backdrop-blur-sm px-4 py-2 shadow-md hover:border-[#0F7A7E]/60 hover:shadow-lg transition-all duration-300"
+            >
+              <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#0F7A7E] flex-shrink-0 shadow-sm">
+                <span className="absolute inset-0 rounded-full bg-[#0F7A7E] opacity-0 group-hover:opacity-25 group-hover:scale-[1.8] transition-all duration-500" />
+                <svg width="14" height="9" viewBox="0 0 44 28" fill="none" aria-hidden="true" style={{ animation: "miniTruckBounce 2.5s ease-in-out infinite" }}>
+                  <rect x="0" y="4" width="26" height="15" rx="2" fill="white" opacity="0.3" />
+                  <rect x="0" y="4" width="26" height="15" rx="2" stroke="white" strokeWidth="2" />
+                  <path d="M26 8 L26 19 L38 19 L38 13 L34 8 Z" fill="white" opacity="0.35" stroke="white" strokeWidth="2" strokeLinejoin="round" />
+                  <path d="M28 10 L28 16 L36 16 L36 13 L33 10 Z" fill="white" opacity="0.65" />
+                  <circle cx="8" cy="22" r="3.5" fill="white" opacity="0.9" />
+                  <circle cx="20" cy="22" r="3.5" fill="white" opacity="0.9" />
+                  <circle cx="33" cy="22" r="3.5" fill="white" opacity="0.9" />
                 </svg>
-              </a>
+              </span>
+              <span className="text-xs font-semibold text-[#0F7A7E]">Abrir Dashboard</span>
+              <svg className="h-3 w-3 text-[#0F7A7E]/50 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+
+            {/* v2.0 floating badge above carousel */}
+            <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 rounded-full bg-[#0F7A7E] text-white px-5 py-2 shadow-lg shadow-[#0F7A7E]/30 whitespace-nowrap">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#59C5B3] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
+              </span>
+              <span className="text-sm font-bold tracking-wide">Dashboard v2.0 disponible</span>
+              <span className="rounded-full bg-[#F7A23B] px-2 py-0.5 text-[10px] font-black text-white uppercase tracking-wider">Nuevo</span>
             </div>
 
             <div className="relative mt-4">
