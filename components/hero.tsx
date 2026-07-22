@@ -152,30 +152,43 @@ export default function Hero() {
               />
             </div>
 
-            {/* Truck mini-bubble — left circle area */}
-            <div className="flex justify-center lg:justify-start pt-2">
+            {/* Guia label bubble — left circle area */}
+            <div className="flex justify-center pt-2">
               <a
                 href="https://dashboard.guiasdigitales.mx"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Accede al dashboard"
-                className="group inline-flex items-center gap-2.5 rounded-full border border-[#0F7A7E]/20 bg-white/70 backdrop-blur-sm px-3 py-1.5 shadow-sm hover:border-[#0F7A7E]/45 hover:shadow-md hover:bg-white transition-all duration-300"
+                aria-label="Genera tu guía prepagada en 1 minuto"
+                className="group inline-flex items-center gap-3.5 rounded-2xl border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-5 py-3.5 shadow-md hover:border-[#0F7A7E]/50 hover:shadow-lg hover:bg-white transition-all duration-300"
               >
-                {/* Tiny truck bubble */}
-                <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#0F7A7E] flex-shrink-0">
-                  <span className="absolute inset-0 rounded-full bg-[#0F7A7E] opacity-0 group-hover:opacity-30 group-hover:scale-150 transition-all duration-500" />
-                  <svg width="14" height="9" viewBox="0 0 44 28" fill="none" aria-hidden="true" style={{ animation: "miniTruckBounce 2.5s ease-in-out infinite" }}>
-                    <rect x="0" y="4" width="26" height="15" rx="2" fill="white" opacity="0.3" />
-                    <rect x="0" y="4" width="26" height="15" rx="2" stroke="white" strokeWidth="2" />
-                    <path d="M26 8 L26 19 L38 19 L38 13 L34 8 Z" fill="white" opacity="0.35" stroke="white" strokeWidth="2" strokeLinejoin="round" />
-                    <path d="M28 10 L28 16 L36 16 L36 13 L33 10 Z" fill="white" opacity="0.65" />
-                    <circle cx="8" cy="22" r="3.5" fill="white" opacity="0.9" />
-                    <circle cx="20" cy="22" r="3.5" fill="white" opacity="0.9" />
-                    <circle cx="33" cy="22" r="3.5" fill="white" opacity="0.9" />
+                {/* Shipping label / prepaid guide icon */}
+                <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F7A7E] flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                  <span className="absolute inset-0 rounded-xl bg-[#0F7A7E] opacity-0 group-hover:opacity-20 group-hover:scale-125 transition-all duration-500" />
+                  {/* Shipping label SVG: document with barcode + fold corner */}
+                  <svg width="20" height="22" viewBox="0 0 20 22" fill="none" aria-hidden="true">
+                    {/* Label body */}
+                    <rect x="1" y="1" width="14" height="19" rx="1.5" fill="white" opacity="0.18" stroke="white" strokeWidth="1.2" />
+                    {/* Folded corner */}
+                    <path d="M11 1 L15 5 L11 5 Z" fill="white" opacity="0.35" />
+                    <path d="M11 1 L15 5" stroke="white" strokeWidth="0.8" opacity="0.6" />
+                    {/* Barcode lines */}
+                    <rect x="3" y="9" width="1.5" height="7" rx="0.4" fill="white" opacity="0.8" />
+                    <rect x="5.5" y="9" width="1" height="7" rx="0.4" fill="white" opacity="0.8" />
+                    <rect x="7.5" y="9" width="1.5" height="7" rx="0.4" fill="white" opacity="0.8" />
+                    <rect x="10" y="9" width="1" height="7" rx="0.4" fill="white" opacity="0.8" />
+                    <rect x="12" y="9" width="1.5" height="7" rx="0.4" fill="white" opacity="0.8" />
+                    {/* Header text lines */}
+                    <rect x="3" y="3" width="6" height="1.2" rx="0.6" fill="white" opacity="0.65" />
+                    <rect x="3" y="5.5" width="4.5" height="1" rx="0.5" fill="white" opacity="0.45" />
+                    {/* "PREPAGADA" stamp-like accent */}
+                    <rect x="2" y="17.5" width="11" height="1.5" rx="0.5" fill="white" opacity="0.3" />
                   </svg>
                 </span>
-                <span className="text-xs font-medium text-[#0B0A16]/60 group-hover:text-[#0F7A7E] transition-colors">Tu guía lista en 1 minuto</span>
-                <svg className="h-3 w-3 text-[#0F7A7E]/40 group-hover:text-[#0F7A7E] group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-sm font-semibold text-[#0B0A16]/80 group-hover:text-[#0F7A7E] transition-colors leading-tight">Tu guía lista en 1 minuto</span>
+                  <span className="text-xs text-[#0B0A16]/45">Guía prepagada, lista para imprimir</span>
+                </div>
+                <svg className="h-4 w-4 text-[#0F7A7E]/40 group-hover:text-[#0F7A7E] group-hover:translate-x-0.5 transition-all ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
@@ -262,7 +275,7 @@ export default function Hero() {
               </div>
 
               {/* Truck mini-bubble — right circle area, below carousel */}
-              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 z-20">
+              <div className="mt-6 flex justify-center">
                 <a
                   href="https://dashboard.guiasdigitales.mx"
                   target="_blank"
