@@ -170,7 +170,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Genera tu guía ahora en segundos"
-                  className="group inline-flex items-center gap-3 rounded-xl border border-[#0F7A7E]/30 bg-white/85 backdrop-blur-sm px-4 py-2.5 shadow-md hover:border-[#0F7A7E]/60 hover:shadow-lg hover:bg-white transition-all duration-300 ml-2"
+                  className="group inline-flex items-center gap-3 rounded-xl border border-[#0F7A7E]/30 bg-white/85 backdrop-blur-sm px-4 py-2.5 shadow-md hover:border-[#0F7A7E]/60 hover:shadow-lg hover:bg-white transition-all duration-300 ml-8"
                 >
                   {/* Document/guide icon bubble */}
                   <span className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F7A7E] flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
@@ -209,41 +209,21 @@ export default function Hero() {
 
           {/* Right column - Screenshot Carousel */}
           <div className="relative hidden lg:block">
-            {/* "Abrir Dashboard" truck bubble ABOVE v2.0 badge */}
+            {/* v2.0 floating badge above carousel — clickable to sign-up */}
             <a
-              href="https://dashboard.guiasdigitales.mx"
+              href="https://dashboard.guiasdigitales.mx/sign-up"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ir al dashboard"
-              className="absolute -top-24 left-1/2 -translate-x-1/2 z-40 group inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/30 bg-white/90 backdrop-blur-sm px-4 py-2 shadow-md hover:border-[#0F7A7E]/60 hover:shadow-lg transition-all duration-300"
+              aria-label="Regístrate y accede al Dashboard v2.0"
+              className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 group inline-flex items-center gap-2 rounded-full bg-[#0F7A7E] text-white px-5 py-2 shadow-lg shadow-[#0F7A7E]/30 whitespace-nowrap hover:shadow-xl hover:bg-[#0C6467] transition-all duration-300"
             >
-              <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#0F7A7E] flex-shrink-0 shadow-sm">
-                <span className="absolute inset-0 rounded-full bg-[#0F7A7E] opacity-0 group-hover:opacity-25 group-hover:scale-[1.8] transition-all duration-500" />
-                <svg width="14" height="9" viewBox="0 0 44 28" fill="none" aria-hidden="true" style={{ animation: "miniTruckBounce 2.5s ease-in-out infinite" }}>
-                  <rect x="0" y="4" width="26" height="15" rx="2" fill="white" opacity="0.3" />
-                  <rect x="0" y="4" width="26" height="15" rx="2" stroke="white" strokeWidth="2" />
-                  <path d="M26 8 L26 19 L38 19 L38 13 L34 8 Z" fill="white" opacity="0.35" stroke="white" strokeWidth="2" strokeLinejoin="round" />
-                  <path d="M28 10 L28 16 L36 16 L36 13 L33 10 Z" fill="white" opacity="0.65" />
-                  <circle cx="8" cy="22" r="3.5" fill="white" opacity="0.9" />
-                  <circle cx="20" cy="22" r="3.5" fill="white" opacity="0.9" />
-                  <circle cx="33" cy="22" r="3.5" fill="white" opacity="0.9" />
-                </svg>
-              </span>
-              <span className="text-xs font-semibold text-[#0F7A7E]">Abrir Dashboard</span>
-              <svg className="h-3 w-3 text-[#0F7A7E]/50 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-
-            {/* v2.0 floating badge above carousel */}
-            <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 rounded-full bg-[#0F7A7E] text-white px-5 py-2 shadow-lg shadow-[#0F7A7E]/30 whitespace-nowrap">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#59C5B3] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
               </span>
               <span className="text-sm font-bold tracking-wide">Dashboard v2.0 disponible</span>
               <span className="rounded-full bg-[#F7A23B] px-2 py-0.5 text-[10px] font-black text-white uppercase tracking-wider">Nuevo</span>
-            </div>
+            </a>
 
             <div className="relative mt-4">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#0F7A7E]/20 to-[#59C5B3]/20 rounded-2xl blur-xl" />
