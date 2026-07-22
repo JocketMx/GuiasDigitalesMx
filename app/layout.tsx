@@ -5,28 +5,61 @@ import { OrganizationSchema, LocalBusinessSchema } from "@/lib/schema-components
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://guiasdigitales.mx"),
-  title: "Guías Digitales v2.0 - Notificaciones WhatsApp + Gestión de Créditos | Envíos Baratos México",
+  title: "Guías Digitales | Guías de Envío Baratas DHL, FedEx, UPS, Estafeta México",
   description:
-    "Plataforma de envíos v2.0 con notificaciones WhatsApp en tiempo real, gestión de créditos con TDC, incidencias, facturación automática y plugins Shopify/WordPress. Ahorra 60% en envíos.",
-  keywords: "guías digitales v2.0, notificaciones whatsapp envios, gestión créditos paquetería, plataforma envios mexico, integraciones shopify woocommerce, logística, paquetería, envíos baratos",
-  authors: [{ name: "GDMX Logistics" }],
+    "Guías Digitales MX — genera guías de envío prepagadas con DHL, FedEx, UPS, Estafeta, 99 Minutos y más. Ahorra hasta 60% vs precio de mostrador. Cotiza, compara y crea tu guía en 1 minuto. 12 años de experiencia en logística.",
+  keywords: [
+    "guias digitales",
+    "guias de envio",
+    "guias prepagadas",
+    "guias DHL",
+    "guias FedEx",
+    "guias UPS",
+    "guias Estafeta",
+    "guias baratas Mexico",
+    "guias de envio baratas",
+    "guias prepagadas DHL baratas",
+    "guias prepagadas FedEx",
+    "guias prepagadas Estafeta",
+    "cotizar envio Mexico",
+    "paqueteria barata Mexico",
+    "plataforma envios Mexico",
+    "envios baratos para negocios",
+    "guias de paqueteria",
+    "generar guia de envio",
+    "envios DHL baratos",
+    "envios FedEx baratos",
+    "envios UPS Mexico",
+    "logistica ecommerce Mexico",
+    "GDMX Logistics",
+    "Guías Digitales MX",
+  ].join(", "),
+  authors: [{ name: "GDMX Logistics", url: "https://guiasdigitales.mx" }],
   alternates: {
     canonical: "https://guiasdigitales.mx",
   },
   openGraph: {
-    title: "Guías Digitales v2.0 - Notificaciones WhatsApp + Créditos con TDC",
-    description: "La plataforma de envíos más completa de México. Notificaciones WhatsApp en tiempo real, créditos con TDC, facturación automática, plugins Shopify/WordPress. Ahorra 60%.",
+    title: "Guías Digitales | Guías de Envío Baratas DHL, FedEx, UPS, Estafeta",
+    description: "Genera guías de envío prepagadas con las mejores paqueterías de México. Ahorra hasta 60% en DHL, FedEx, UPS, Estafeta y más. Cotiza en segundos.",
     siteName: "Guías Digitales MX",
     url: "https://guiasdigitales.mx",
-    images: [{ url: "/opengraph-image.png" }],
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Guías Digitales MX — Plataforma de guías de envío baratas en México",
+      },
+    ],
     locale: "es_MX",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guías Digitales v2.0 - Notificaciones WhatsApp + Créditos con TDC",
-    description: "Notificaciones WhatsApp en tiempo real, gestión de créditos con TDC, facturación automática. La plataforma de envíos más robusta de México.",
+    title: "Guías Digitales | Guías de Envío Baratas DHL, FedEx, UPS, Estafeta México",
+    description: "Genera guías prepagadas con DHL, FedEx, UPS y Estafeta con hasta 60% de descuento. Cotiza y crea tu guía en 1 minuto.",
     images: ["/opengraph-image.png"],
+    site: "@guiasdigitalesmx",
   },
   icons: {
     icon: "/icon.png",
@@ -35,8 +68,18 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
-  generator: 'v0.app',
+  verification: {
+    // Add Google Search Console / Bing verification tokens here when available
+  },
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

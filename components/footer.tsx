@@ -2,6 +2,22 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Instagram, Twitter } from 'lucide-react'
 
+// Meta verified badge — blue checkmark matching Meta's official verification mark
+function MetaVerifiedBadge() {
+  return (
+    <span
+      title="Cuenta verificada por Meta"
+      aria-label="Verificado por Meta"
+      className="inline-flex items-center justify-center"
+    >
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <circle cx="7" cy="7" r="7" fill="#1877F2" />
+        <path d="M4 7L6 9.5L10 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </span>
+  )
+}
+
 export default function Footer() {
   return (
     <footer className="w-full border-t bg-white">
@@ -19,7 +35,7 @@ export default function Footer() {
         </div>
         <div className="text-sm text-brand-ink/70">© {new Date().getFullYear()} GDMX Logistics. Todos los derechos reservados.</div>
         <div className="flex items-center gap-4">
-          <Link href="https://gdmx.mx/dashboard" target="_blank" className="text-sm text-brand-ink/70 hover:text-brand-ink">
+          <Link href="https://dashboard.guiasdigitales.mx" target="_blank" className="text-sm text-brand-ink/70 hover:text-brand-ink">
             Plataforma
           </Link>
           <a href="#beneficios" className="text-sm text-brand-ink/70 hover:text-brand-ink">
@@ -31,27 +47,60 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Social profiles + Meta verification */}
       <div className="container mx-auto px-4 pb-10">
-        <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-brand-ink/70">
-          <span className="font-medium">Redes sociales:</span>
-          <a
-            href="https://www.facebook.com/GuiasDigitalesMx"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook de Guías Digitales MX"
-            className="inline-flex items-center gap-2 hover:text-brand-ink"
-          >
-            <Facebook className="h-4 w-4" />
-            <span>Facebook</span>
-          </a>
-          <span className="inline-flex items-center gap-2 opacity-70">
-            <Instagram className="h-4 w-4" />
-            <span>Instagram: Link pendiente</span>
-          </span>
-          <span className="inline-flex items-center gap-2 opacity-70">
-            <Twitter className="h-4 w-4" />
-            <span>X: Link pendiente</span>
-          </span>
+        <div className="rounded-xl border border-[#0F7A7E]/10 bg-[#0F7A7E]/5 px-5 py-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            {/* Social links */}
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand-ink/50">Síguenos</span>
+
+              {/* Facebook — Meta verified */}
+              <a
+                href="https://www.facebook.com/GuiasDigitalesMx"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook oficial de Guías Digitales MX (verificado por Meta)"
+                className="inline-flex items-center gap-1.5 rounded-full border border-[#1877F2]/20 bg-white px-3 py-1.5 text-sm font-medium text-[#1877F2] shadow-sm hover:bg-[#1877F2]/5 transition-colors"
+              >
+                <Facebook className="h-3.5 w-3.5" />
+                <span>Facebook</span>
+                <MetaVerifiedBadge />
+              </a>
+
+              {/* Instagram — Meta verified */}
+              <a
+                href="https://www.instagram.com/guiasdigitalesmx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram oficial de Guías Digitales MX (verificado por Meta)"
+                className="inline-flex items-center gap-1.5 rounded-full border border-pink-200 bg-white px-3 py-1.5 text-sm font-medium text-pink-600 shadow-sm hover:bg-pink-50 transition-colors"
+              >
+                <Instagram className="h-3.5 w-3.5" />
+                <span>@guiasdigitalesmx</span>
+                <MetaVerifiedBadge />
+              </a>
+
+              {/* X — coming soon */}
+              <span
+                aria-label="Perfil de X / Twitter próximamente"
+                className="inline-flex items-center gap-1.5 rounded-full border border-brand-ink/10 bg-white px-3 py-1.5 text-sm font-medium text-brand-ink/40 cursor-default"
+              >
+                <Twitter className="h-3.5 w-3.5" />
+                <span>X</span>
+                <span className="rounded-full bg-brand-ink/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide">Próximamente</span>
+              </span>
+            </div>
+
+            {/* Meta verification callout */}
+            <div className="flex items-center gap-2 text-xs text-brand-ink/60">
+              <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="flex-shrink-0">
+                <circle cx="7" cy="7" r="7" fill="#1877F2" />
+                <path d="M4 7L6 9.5L10 5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>Cuentas verificadas por <strong className="font-semibold text-brand-ink/80">Meta</strong> en Facebook e Instagram</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

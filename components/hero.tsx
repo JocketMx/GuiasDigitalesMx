@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ShieldCheck, Zap, Package, Percent, Clock, MapPin, Truck, AlertCircle } from "lucide-react"
 import { useState, useEffect } from "react"
-import LogisticsAnimation from "@/components/logistics-animation"
 
 const screenshots = [
   {
@@ -58,8 +57,6 @@ export default function Hero() {
         <div className="absolute top-20 right-10 w-72 h-72 bg-[#0F7A7E]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-64 h-64 bg-[#59C5B3]/10 rounded-full blur-3xl" />
       </div>
-      <LogisticsAnimation />
-
       <div className="absolute top-4 right-4 z-30 hidden md:block">
         <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E] shadow-sm">
           <span className="text-lg">🇲🇽</span>
