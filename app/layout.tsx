@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
-import { OrganizationSchema, LocalBusinessSchema } from "@/lib/schema-components"
+import { OrganizationSchema, LocalBusinessSchema, WebSiteSchema } from "@/lib/schema-components"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://guiasdigitales.mx"),
@@ -90,6 +90,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <WebSiteSchema />
         <OrganizationSchema />
         <LocalBusinessSchema />
         <link rel="manifest" href="/manifest.json" />

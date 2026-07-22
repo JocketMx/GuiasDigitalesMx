@@ -105,6 +105,33 @@ export const LocalBusinessSchema: FC = () => {
   )
 }
 
+export const WebSiteSchema: FC = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Guías Digitales MX',
+    alternateName: 'Guías de envío baratas México — DHL, FedEx, UPS, Estafeta',
+    url: 'https://guiasdigitales.mx',
+    description: 'Plataforma para generar guías de envío prepagadas baratas en México. Cotiza DHL, FedEx, UPS, Estafeta y más en segundos.',
+    inLanguage: 'es-MX',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://guiasdigitales.mx/blog?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 export const FAQSchema: FC<{ faqs: Array<{ question: string; answer: string }> }> = ({ faqs }) => {
   const schema = {
     '@context': 'https://schema.org',

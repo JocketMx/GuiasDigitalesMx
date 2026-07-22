@@ -60,13 +60,38 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link href="https://dashboard.guiasdigitales.mx" target="_blank" className="ml-4">
-            <Button className="bg-[#0F7A7E] text-white hover:bg-[#0F7A7E]/90 px-6 rounded-full shadow-lg shadow-[#0F7A7E]/25 hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-              Comenzar
-              <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
+          {/* Animated truck CTA pill */}
+          <Link
+            href="https://dashboard.guiasdigitales.mx"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir al dashboard"
+            className="ml-3 group relative flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-[#0F7A7E]/5 pl-1 pr-5 py-1 hover:border-[#0F7A7E]/50 hover:bg-[#0F7A7E]/10 transition-all duration-300 overflow-hidden"
+          >
+            {/* Truck icon bubble */}
+            <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-[#0F7A7E] flex-shrink-0 shadow-sm group-hover:shadow-md transition-shadow">
+              {/* Pulsing ring */}
+              <span className="absolute inset-0 rounded-full bg-[#0F7A7E] opacity-30 group-hover:scale-150 group-hover:opacity-0 transition-all duration-700" />
+              <svg width="18" height="12" viewBox="0 0 44 28" fill="none" aria-hidden="true" style={{ animation: "navTruckBounce 2s ease-in-out infinite" }}>
+                <rect x="0" y="4" width="26" height="15" rx="2" fill="white" opacity="0.25" />
+                <rect x="0" y="4" width="26" height="15" rx="2" stroke="white" strokeWidth="1.8" />
+                <path d="M26 8 L26 19 L38 19 L38 13 L34 8 Z" fill="white" opacity="0.3" stroke="white" strokeWidth="1.8" strokeLinejoin="round" />
+                <path d="M28 10 L28 16 L36 16 L36 13 L33 10 Z" fill="white" opacity="0.6" />
+                <circle cx="8" cy="21" r="3.5" fill="white" opacity="0.9" stroke="white" strokeWidth="0.5" />
+                <circle cx="20" cy="21" r="3.5" fill="white" opacity="0.9" stroke="white" strokeWidth="0.5" />
+                <circle cx="33" cy="21" r="3.5" fill="white" opacity="0.9" stroke="white" strokeWidth="0.5" />
+              </svg>
+            </span>
+            <span className="text-sm font-semibold text-[#0F7A7E]">Comenzar</span>
+            <ArrowRight className="h-3.5 w-3.5 text-[#0F7A7E] group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </nav>
+        <style>{`
+          @keyframes navTruckBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-1.5px); }
+          }
+        `}</style>
 
         <div className="md:hidden">
           <Sheet>
