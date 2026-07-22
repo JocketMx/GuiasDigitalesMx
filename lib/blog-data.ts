@@ -1012,7 +1012,7 @@ Con Guías Digitales v2.0, ese proceso que antes tomaba horas ahora toma **1 cli
     date: "2026-07-21",
     readTime: "7 min",
     category: "Finanzas",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202026-07-21%20a%20la%28s%29%2013.32.34-aPbvLhrphRfXnNtWWcKk3ogW0rA6lh.png",
+    image: "/images/facturacion-automatica.png",
     featured: false,
     tags: ["facturación", "automática", "contabilidad", "finanzas", "pdf", "exportación"],
     author: {

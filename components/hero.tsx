@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ShieldCheck, Zap, Package, Percent, Clock, MapPin, Truck, AlertCircle } from "lucide-react"
 import { useState, useEffect } from "react"
-import LogisticsAnimation from "@/components/logistics-animation"
 
 const screenshots = [
   {
@@ -58,8 +57,6 @@ export default function Hero() {
         <div className="absolute top-20 right-10 w-72 h-72 bg-[#0F7A7E]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-64 h-64 bg-[#59C5B3]/10 rounded-full blur-3xl" />
       </div>
-      <LogisticsAnimation />
-
       <div className="absolute top-4 right-4 z-30 hidden md:block">
         <div className="inline-flex items-center gap-2 rounded-full border border-[#0F7A7E]/20 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm text-[#0F7A7E] shadow-sm">
           <span className="text-lg">🇲🇽</span>
@@ -124,7 +121,19 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link href="https://dashboard.guiasdigitales.mx" target="_blank">
-                <Button size="lg" className="bg-[#0F7A7E] hover:bg-[#0F7A7E]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#0F7A7E]/25 hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+                <Button size="lg" className="bg-[#0F7A7E] hover:bg-[#0F7A7E]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#0F7A7E]/25 hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto group inline-flex items-center">
+                  <span className="relative flex h-5 w-5 items-center justify-center rounded-full bg-white/20 mr-2 flex-shrink-0">
+                    <span className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-30 group-hover:scale-150 transition-all duration-500" style={{ animation: "miniTruckBounce 2.5s ease-in-out infinite" }} />
+                    <svg width="12" height="8" viewBox="0 0 44 28" fill="none" aria-hidden="true">
+                      <rect x="0" y="4" width="26" height="15" rx="2" fill="white" opacity="0.4" />
+                      <rect x="0" y="4" width="26" height="15" rx="2" stroke="white" strokeWidth="2" />
+                      <path d="M26 8 L26 19 L38 19 L38 13 L34 8 Z" fill="white" opacity="0.45" stroke="white" strokeWidth="2" strokeLinejoin="round" />
+                      <path d="M28 10 L28 16 L36 16 L36 13 L33 10 Z" fill="white" opacity="0.7" />
+                      <circle cx="8" cy="22" r="3.5" fill="white" opacity="0.85" />
+                      <circle cx="20" cy="22" r="3.5" fill="white" opacity="0.85" />
+                      <circle cx="33" cy="22" r="3.5" fill="white" opacity="0.85" />
+                    </svg>
+                  </span>
                   Comenzar ahora
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -137,36 +146,84 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="flex items-center gap-6 justify-center lg:justify-start pt-4">
-              <Image
-                src="/images/logo-gdmx-transparent.png"
-                alt="GDMX Logistics"
-                width={120}
-                height={80}
-                className="h-10 w-auto"
-              />
-              <div className="h-8 w-px bg-[#0B0A16]/20" />
-              <Image
-                src="/images/logo_guias_hero.png"
-                alt="Guias Digitales MX"
-                width={120}
-                height={80}
-                className="h-8 w-auto"
-              />
+            <div className="flex items-center gap-4 justify-center lg:justify-start pt-4 flex-wrap">
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/images/logo-gdmx-transparent.png"
+                  alt="GDMX Logistics"
+                  width={120}
+                  height={80}
+                  className="h-10 w-auto"
+                />
+                <div className="h-8 w-px bg-[#0B0A16]/20" />
+                <Image
+                  src="/images/logo_guias_hero.png"
+                  alt="Guias Digitales MX"
+                  width={120}
+                  height={80}
+                  className="h-8 w-auto"
+                />
+
+                {/* Expanded guide bubble — between buttons, larger */}
+                <a
+                  href="https://dashboard.guiasdigitales.mx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Genera tu guía ahora en segundos"
+                  className="group inline-flex items-center gap-3 rounded-xl border border-[#0F7A7E]/30 bg-white/85 backdrop-blur-sm px-4 py-2.5 shadow-md hover:border-[#0F7A7E]/60 hover:shadow-lg hover:bg-white transition-all duration-300 ml-8"
+                >
+                  {/* Document/guide icon bubble */}
+                  <span className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F7A7E] flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                    <span className="absolute inset-0 rounded-lg bg-[#0F7A7E] opacity-0 group-hover:opacity-20 group-hover:scale-130 transition-all duration-500" />
+                    {/* Document with checkmark icon SVG */}
+                    <svg width="18" height="18" viewBox="0 0 20 24" fill="none" aria-hidden="true">
+                      {/* Document body */}
+                      <rect x="2" y="2" width="14" height="20" rx="2" fill="white" opacity="0.18" stroke="white" strokeWidth="1.2" />
+                      {/* Fold corner */}
+                      <path d="M14 2 L18 6 L14 6 Z" fill="white" opacity="0.35" stroke="white" strokeWidth="0.7" />
+                      {/* Checkmark inside */}
+                      <path d="M6 12 L8.5 14.5 L14 9" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
+                      {/* Decorative lines */}
+                      <line x1="4" y1="4" x2="12" y2="4" stroke="white" strokeWidth="0.7" opacity="0.5" />
+                      <line x1="4" y1="18" x2="12" y2="18" stroke="white" strokeWidth="0.7" opacity="0.5" />
+                    </svg>
+                  </span>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-sm font-semibold text-[#0F7A7E] leading-tight">Genera tu guía ahora</span>
+                    <span className="text-xs text-[#0B0A16]/45">1 minuto, lista para imprimir</span>
+                  </div>
+                  <svg className="h-4 w-4 text-[#0F7A7E]/40 group-hover:text-[#0F7A7E] group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
+              </div>
             </div>
+
+            <style>{`
+              @keyframes miniTruckBounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-1.5px); }
+              }
+            `}</style>
           </div>
 
           {/* Right column - Screenshot Carousel */}
           <div className="relative hidden lg:block">
-            {/* v2.0 floating badge above carousel */}
-            <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 rounded-full bg-[#0F7A7E] text-white px-5 py-2 shadow-lg shadow-[#0F7A7E]/30 whitespace-nowrap">
+            {/* v2.0 floating badge above carousel — clickable to sign-up */}
+            <a
+              href="https://dashboard.guiasdigitales.mx/sign-up"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Regístrate y accede al Dashboard v2.0"
+              className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 group inline-flex items-center gap-2 rounded-full bg-[#0F7A7E] text-white px-5 py-2 shadow-lg shadow-[#0F7A7E]/30 whitespace-nowrap hover:shadow-xl hover:bg-[#0C6467] transition-all duration-300"
+            >
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#59C5B3] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
               </span>
               <span className="text-sm font-bold tracking-wide">Dashboard v2.0 disponible</span>
               <span className="rounded-full bg-[#F7A23B] px-2 py-0.5 text-[10px] font-black text-white uppercase tracking-wider">Nuevo</span>
-            </div>
+            </a>
 
             <div className="relative mt-4">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#0F7A7E]/20 to-[#59C5B3]/20 rounded-2xl blur-xl" />

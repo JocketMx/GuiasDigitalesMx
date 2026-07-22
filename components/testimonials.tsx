@@ -97,7 +97,7 @@ export default function Testimonials() {
       avatar: "/mexican-woman-artisan.png",
     },
     {
-      name: "Martha Homófono",
+      name: "Alejandro Cortina",
       role: "Vendedora Certificada · PAMEX",
       company: "Perfume Adictos México",
       quote:
