@@ -5,16 +5,25 @@ export const OrganizationSchema: FC = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Guías Digitales MX (GDMX)',
+    name: 'Guías Digitales MX',
+    alternateName: ['GDMX Logistics', 'Guias Digitales', 'GuiasDigitalesMX'],
     url: 'https://guiasdigitales.mx',
     logo: 'https://guiasdigitales.mx/images/logo_guias.png',
-    description: 'Plataforma líder de envíos y logística en México. Cotiza, compara y crea guías digitales con hasta 60% de ahorro.',
+    description: 'Plataforma líder de guías de envío y logística en México. Genera guías prepagadas con DHL, FedEx, UPS, Estafeta y más paqueterías. Ahorra hasta 60% vs precio de mostrador. 12 años de experiencia.',
+    foundingDate: '2012',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Mexico',
+    },
     sameAs: [
+      'https://www.facebook.com/GuiasDigitalesMx',
+      'https://www.instagram.com/guiasdigitalesmx/',
       'https://wa.me/523326398319',
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'México',
+      addressLocality: 'Guadalajara',
+      addressRegion: 'Jalisco',
       addressCountry: 'MX',
     },
     contactPoint: {
@@ -25,11 +34,17 @@ export const OrganizationSchema: FC = () => {
       availableLanguage: 'es-MX',
       hoursAvailable: 'Mo-Su 00:00-23:59',
     },
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'MXN',
-      description: 'Servicio de envíos con descuentos de hasta 60%',
-      availability: 'https://schema.org/InStock',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Guías de envío prepagadas',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Guías DHL baratas' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Guías FedEx baratas' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Guías UPS México' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Guías Estafeta baratas' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Guías 99 Minutos' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Guías Paquete Express' } },
+      ],
     },
   }
 
@@ -47,19 +62,65 @@ export const LocalBusinessSchema: FC = () => {
     '@type': 'LocalBusiness',
     name: 'Guías Digitales MX',
     image: 'https://guiasdigitales.mx/images/logo_guias.png',
-    description: 'Plataforma de envíos 24/7 con integración a 7 paqueterías',
+    description: 'Genera guías de envío prepagadas baratas con DHL, FedEx, UPS, Estafeta y más. Ahorra hasta 60%. Cotizador 24/7 para negocios mexicanos.',
     url: 'https://guiasdigitales.mx',
     telephone: '+52-332-639-8319',
     address: {
       '@type': 'PostalAddress',
+      addressLocality: 'Guadalajara',
+      addressRegion: 'Jalisco',
       addressCountry: 'MX',
     },
-    areaServed: 'MX',
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '20.6597',
+      longitude: '-103.3496',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Mexico',
+    },
     priceRange: '$$',
+    currenciesAccepted: 'MXN',
+    paymentAccepted: 'Visa, Mastercard, American Express, Apple Pay, Google Pay, SPEI',
+    openingHours: 'Mo-Su 00:00-23:59',
+    sameAs: [
+      'https://www.facebook.com/GuiasDigitalesMx',
+      'https://www.instagram.com/guiasdigitalesmx/',
+    ],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',
-      reviewCount: '500+',
+      reviewCount: '500',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export const WebSiteSchema: FC = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Guías Digitales MX',
+    alternateName: 'Guías de envío baratas México — DHL, FedEx, UPS, Estafeta',
+    url: 'https://guiasdigitales.mx',
+    description: 'Plataforma para generar guías de envío prepagadas baratas en México. Cotiza DHL, FedEx, UPS, Estafeta y más en segundos.',
+    inLanguage: 'es-MX',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://guiasdigitales.mx/blog?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
     },
   }
 

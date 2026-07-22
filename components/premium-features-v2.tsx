@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { MessageCircle, CreditCard, Code, BarChart3, CheckCircle, Zap } from "lucide-react"
+import { MessageCircle, CreditCard, Code, BarChart3, CheckCircle, Zap, FileText } from "lucide-react"
 
 export default function PremiumFeaturesV2() {
   const features = [
@@ -239,24 +239,71 @@ export default function PremiumFeaturesV2() {
             </div>
           </div>
 
-          {/* Bottom row: 4 regular features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.slice(2).map((feature, idx) => (
-              <div
-                key={idx}
-                className={`group p-6 rounded-2xl border border-[#0F7A7E]/10 bg-gradient-to-br ${feature.color} hover:border-[#0F7A7E]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#0F7A7E]/15 hover:-translate-y-1`}
-              >
-                <div className="flex flex-col gap-4">
-                  <div className="h-12 w-12 rounded-xl bg-[#0F7A7E] flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                    <feature.icon className="h-6 w-6" />
+          {/* Bottom row: Facturación (wide) + 3 feature cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            {/* Facturación Automática — spans 3 cols with real invoice screenshot */}
+            <div className="lg:col-span-3 group relative rounded-2xl border border-[#0F7A7E]/15 bg-gradient-to-br from-[#0F7A7E]/5 to-[#59C5B3]/5 hover:border-[#0F7A7E]/35 transition-all duration-300 hover:shadow-xl hover:shadow-[#0F7A7E]/15 overflow-hidden">
+              <div className="flex flex-col h-full">
+                {/* Text header */}
+                <div className="p-7 pb-4">
+                  <div className="flex items-start gap-4">
+                    <div className="h-12 w-12 rounded-xl bg-[#0F7A7E] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <FileText className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl text-[#0B0A16] mb-1">Facturación Automática en 1 Click</h3>
+                      <p className="text-sm text-[#0B0A16]/65 leading-relaxed">
+                        Crea perfiles de facturación y genera CFDI automáticamente para todos tus movimientos. Descarga el PDF al instante con sello digital del SAT incluido.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-[#0B0A16] mb-2">{feature.title}</h3>
-                    <p className="text-sm text-[#0B0A16]/70 leading-relaxed">{feature.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {["CFDI 4.0", "Sello SAT", "Descarga PDF", "Serie personalizada"].map((tag) => (
+                      <span key={tag} className="inline-flex items-center rounded-full bg-[#0F7A7E]/10 px-3 py-1 text-xs font-medium text-[#0F7A7E]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {/* Invoice screenshot */}
+                <div className="relative flex-1 bg-[#F8FAFB] border-t border-[#0F7A7E]/10 p-4 flex items-end justify-center min-h-[200px]">
+                  <div className="relative w-full max-w-[480px] rounded-xl overflow-hidden shadow-xl border border-black/8 group-hover:scale-[1.02] transition-transform duration-500">
+                    <Image
+                      src="/images/facturacion-automatica.png"
+                      alt="Facturación automática CFDI en Guías Digitales MX — pantalla real del sistema"
+                      width={1198}
+                      height={1007}
+                      className="w-full h-auto"
+                    />
+                    {/* Overlay label */}
+                    <div className="absolute top-3 right-3 flex items-center gap-1.5 rounded-full bg-[#0F7A7E] px-3 py-1.5 text-xs font-bold text-white shadow-lg">
+                      <Zap className="h-3 w-3" />
+                      CFDI Real
+                    </div>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Right column: 3 small feature cards stacked */}
+            <div className="lg:col-span-2 flex flex-col gap-6">
+              {features.slice(2, 5).map((feature, idx) => (
+                <div
+                  key={idx}
+                  className={`group flex-1 p-6 rounded-2xl border border-[#0F7A7E]/10 bg-gradient-to-br ${feature.color} hover:border-[#0F7A7E]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#0F7A7E]/15 hover:-translate-y-0.5`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="h-10 w-10 rounded-xl bg-[#0F7A7E] flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <feature.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base text-[#0B0A16] mb-1">{feature.title}</h3>
+                      <p className="text-sm text-[#0B0A16]/70 leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
